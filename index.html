@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eurcase | Travel Luggage</title>
-    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./src/styles.css?v=eurcase-color-20260613" />
   </head>
   <body>
-    <div class="promo-bar">New season travel system now previewing | Free shipping concept for orders over $99</div>
+    <div class="promo-bar">
+      <span>New: CLOUD Cabin Case</span>
+      <span>Free shipping concept over $99</span>
+      <span>Wholesale inquiry now open</span>
+    </div>
 
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Eurcase home">
@@ -16,8 +20,8 @@
       </a>
       <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#categories">Cases</a>
-        <a href="#products">Bags</a>
-        <a href="#products">Backpacks</a>
+        <a href="#series-stories">Bags</a>
+        <a href="#products">Best Sellers</a>
         <a href="#series">Series</a>
         <a href="#story">Story</a>
         <a href="#care">Support</a>
@@ -26,6 +30,11 @@
         <a href="#products">Search</a>
         <a href="#contact">Account</a>
         <a class="cart-pill" href="#products">Cart 0</a>
+      </div>
+      <div class="mobile-actions" aria-label="Mobile shopping actions">
+        <a href="#products" aria-label="Search">Search</a>
+        <a href="#contact" aria-label="Account">Account</a>
+        <a href="#products" aria-label="Cart">Cart</a>
       </div>
       <button class="icon-button" aria-label="Open navigation">
         <span></span>
@@ -37,14 +46,20 @@
     <main>
       <section class="hero" id="top">
         <div class="hero-copy">
-          <p class="eyebrow">Travel lighter. Pack clearer.</p>
-          <h1>Move with Eurcase.</h1>
+          <p class="eyebrow">CLOUD Series</p>
+          <h1>Light luggage for clear movement.</h1>
           <p>
-            A modern travel goods system across cases, bags, backpacks, slings, and essentials. Choose by category, then by function.
+            Meet the Eurcase CLOUD Cabin Case: smooth rolling, lighter handling, and an organized interior for short trips and everyday escapes.
           </p>
           <div class="hero-actions">
-            <a class="primary-action" href="#products">Shop new arrivals</a>
-            <a class="secondary-action" href="#series">Explore series</a>
+            <a class="primary-action" href="#products">Shop CLOUD</a>
+            <a class="secondary-action" href="#categories">Shop by category</a>
+          </div>
+          <div class="hero-dots" aria-label="Featured product slides">
+            <i></i>
+            <i></i>
+            <i class="active"></i>
+            <i></i>
           </div>
         </div>
         <a class="hero-product" href="#products" aria-label="View Eurcase CLOUD Cabin Case">
@@ -57,24 +72,47 @@
         </a>
       </section>
 
+      <section class="campaign-grid" id="series-stories" aria-label="Featured series">
+        <a class="campaign campaign-access" href="#products">
+          <span>ACCESS</span>
+          <h2>Front-open travel, ready for laptops and documents.</h2>
+          <p>&#24555;&#21462;&#21069;&#24320;&#26053;&#34892;&#31665;</p>
+        </a>
+        <a class="campaign campaign-flow" href="#products">
+          <span>FLOW</span>
+          <h2>Expandable bags for weekends, work trips, and flexible packing.</h2>
+          <p>&#28789;&#27963;&#25193;&#23481;&#26053;&#34892;&#21253;</p>
+        </a>
+        <a class="campaign campaign-air" href="#products">
+          <span>AIR</span>
+          <h2>Light daily carry for commuting and airport days.</h2>
+          <p>&#36731;&#35013;&#36890;&#21220;&#21452;&#32937;&#21253;</p>
+        </a>
+      </section>
+
       <section class="category-band" id="categories" aria-label="Shop by category">
         <a href="#products">
+          <img src="https://images.unsplash.com/photo-1670888664974-3d74a08dea3d?auto=format&fit=crop&w=600&q=80" alt="" />
           <span>Cases</span>
           <small>&#26053;&#34892;&#31665;</small>
         </a>
         <a href="#products">
+          <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=600&q=80" alt="" />
           <span>Bags</span>
           <small>&#26053;&#34892;&#21253;</small>
         </a>
         <a href="#products">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" alt="" />
           <span>Backpacks</span>
           <small>&#21452;&#32937;&#21253;</small>
         </a>
         <a href="#products">
+          <img src="https://images.unsplash.com/photo-1523779105320-d1cd346ff52b?auto=format&fit=crop&w=600&q=80" alt="" />
           <span>Slings</span>
           <small>&#38543;&#36523;&#21253;</small>
         </a>
         <a href="#products">
+          <img src="https://images.unsplash.com/photo-1581553680321-4fffae59fccd?auto=format&fit=crop&w=600&q=80" alt="" />
           <span>Essentials</span>
           <small>&#26053;&#34892;&#37197;&#20214;</small>
         </a>
@@ -83,10 +121,14 @@
       <section class="section product-section" id="products">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">New arrivals</p>
-            <h2>Shop by travel need.</h2>
+            <p class="section-kicker">Best sellers</p>
+            <h2>Ready for every kind of trip.</h2>
           </div>
           <a class="text-link" href="#contact">View all products</a>
+        </div>
+        <div class="product-tabs" aria-label="Product view tabs">
+          <a class="active" href="#products">Best Sellers</a>
+          <a href="#products">New Arrivals</a>
         </div>
         <div class="collection-grid">
           <article class="product-card">
@@ -97,7 +139,7 @@
             <div class="product-info">
               <span>CLOUD | &#36731;&#37327;&#31995;&#21015;</span>
               <h3>Eurcase CLOUD Cabin Case</h3>
-              <p>&#20113;&#24863;&#36731;&#37327;&#30331;&#26426;&#31665;</p>
+              <p>20 inch | 38L | &#20113;&#24863;&#36731;&#37327;&#30331;&#26426;&#31665;</p>
               <div class="product-meta">
                 <strong>$129</strong>
                 <div class="swatches" aria-label="Available colors">
@@ -117,7 +159,7 @@
             <div class="product-info">
               <span>STONE | &#38450;&#25252;&#31995;&#21015;</span>
               <h3>Eurcase STONE Frame Case</h3>
-              <p>&#22362;&#22266;&#38450;&#25252;&#38109;&#26694;&#31665;</p>
+              <p>24 inch | 66L | &#22362;&#22266;&#38450;&#25252;&#38109;&#26694;&#31665;</p>
               <div class="product-meta">
                 <strong>$179</strong>
                 <div class="swatches" aria-label="Available colors">
@@ -136,7 +178,7 @@
             <div class="product-info">
               <span>ACCESS | &#24555;&#21462;&#31995;&#21015;</span>
               <h3>Eurcase ACCESS Front-open Case</h3>
-              <p>&#24555;&#21462;&#21069;&#24320;&#26053;&#34892;&#31665;</p>
+              <p>20 inch | Laptop pocket | &#24555;&#21462;&#21069;&#24320;&#26053;&#34892;&#31665;</p>
               <div class="product-meta">
                 <strong>$159</strong>
                 <div class="swatches" aria-label="Available colors">
@@ -156,7 +198,7 @@
             <div class="product-info">
               <span>FLOW | &#28789;&#27963;&#31995;&#21015;</span>
               <h3>Eurcase FLOW Travel Bag</h3>
-              <p>&#28789;&#27963;&#25193;&#23481;&#26053;&#34892;&#21253;</p>
+              <p>35L expandable | &#28789;&#27963;&#25193;&#23481;&#26053;&#34892;&#21253;</p>
               <div class="product-meta">
                 <strong>$89</strong>
                 <div class="swatches" aria-label="Available colors">
@@ -175,7 +217,7 @@
             <div class="product-info">
               <span>AIR | &#36731;&#35013;&#31995;&#21015;</span>
               <h3>Eurcase AIR Commuter Backpack</h3>
-              <p>&#36731;&#35013;&#36890;&#21220;&#21452;&#32937;&#21253;</p>
+              <p>15L daily carry | &#36731;&#35013;&#36890;&#21220;&#21452;&#32937;&#21253;</p>
               <div class="product-meta">
                 <strong>$79</strong>
                 <div class="swatches" aria-label="Available colors">
@@ -225,6 +267,30 @@
               <span>Clear travel system</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="journal-strip" aria-label="Brand projects">
+        <div>
+          <p class="section-kicker">Eurcase Lab</p>
+          <h2>Care, repair, and material thinking for longer travel life.</h2>
+        </div>
+        <div class="journal-cards">
+          <article>
+            <span>01</span>
+            <h3>Care guide</h3>
+            <p>Simple cleaning and storage guidance for cases, bags, and backpacks.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Parts support</h3>
+            <p>Future-ready thinking for wheels, handles, locks, and common wear points.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Travel notes</h3>
+            <p>Seasonal packing stories and collection edits for different journeys.</p>
+          </article>
         </div>
       </section>
 
@@ -286,12 +352,12 @@
         <div>
           <span>01</span>
           <h3>Warranty</h3>
-          <p>Durable travel goods with clear after-sales support.</p>
+          <p>2-year limited warranty concept for first-stage product planning.</p>
         </div>
         <div>
           <span>02</span>
           <h3>Shipping</h3>
-          <p>Made for direct-to-consumer and wholesale fulfillment.</p>
+          <p>Free shipping concept over $99 for direct-to-consumer launch.</p>
         </div>
         <div>
           <span>03</span>
