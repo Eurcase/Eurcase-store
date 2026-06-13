@@ -256,6 +256,10 @@ h1 {
   width: 100%;
 }
 
+.hero-mobile-img {
+  display: none;
+}
+
 .hero-product-card {
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(22, 22, 22, 0.12);
@@ -1054,6 +1058,15 @@ h1 {
   .hero-product img {
     height: 100%;
     object-position: center;
+  }
+
+  .hero-product > img:not(.hero-mobile-img) {
+    display: none;
+  }
+
+  .hero-mobile-img {
+    display: block;
+    object-position: center 58%;
   }
 
   .hero-product-card {
