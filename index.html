@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eurcase | Travel Luggage</title>
-    <link rel="stylesheet" href="./src/styles.css?v=eurcase-color-20260613" />
+    <link rel="stylesheet" href="./src/styles.css?v=hero-carousel-20260615" />
   </head>
   <body>
     <div class="promo-bar">
@@ -45,31 +45,51 @@
 
     <main>
       <section class="hero" id="top">
-        <div class="hero-copy">
-          <p class="eyebrow">CLOUD Series</p>
-          <h1>Light luggage for clear movement.</h1>
-          <p>
-            Meet the Eurcase CLOUD Cabin Case: smooth rolling, lighter handling, and an organized interior for short trips and everyday escapes.
-          </p>
-          <div class="hero-actions">
-            <a class="primary-action" href="#products">Shop CLOUD</a>
-            <a class="secondary-action" href="#categories">Shop by category</a>
+        <div class="hero-copy hero-carousel-copy">
+          <div class="hero-copy-panel hero-copy-panel-access is-active">
+            <p class="eyebrow">ACCESS Series</p>
+            <h1>Open fast. Move with ease.</h1>
+            <p>
+              Meet the Eurcase ACCESS Front-open Case: quick access, organized compartments, and protective hard-shell travel for work trips and easy departures.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-action" href="#products">Shop ACCESS</a>
+              <a class="secondary-action" href="#categories">Shop by category</a>
+            </div>
+          </div>
+          <div class="hero-copy-panel hero-copy-panel-stone">
+            <p class="eyebrow">STONE Series</p>
+            <h1>Built tough. Travel calm.</h1>
+            <p>
+              Meet the Eurcase STONE Frame Case: reinforced protection, secure corners, and a confident hard-shell build for demanding routes.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-action" href="#products">Shop STONE</a>
+              <a class="secondary-action" href="#series">Explore series</a>
+            </div>
           </div>
           <div class="hero-dots" aria-label="Featured product slides">
-            <i></i>
-            <i></i>
             <i class="active"></i>
             <i></i>
           </div>
         </div>
-        <a class="hero-product" href="#products" aria-label="View Eurcase CLOUD Cabin Case">
-          <img src="https://images.unsplash.com/photo-1670888664974-3d74a08dea3d?auto=format&fit=crop&w=1400&q=90" alt="Black hard shell suitcase" />
-          <img class="hero-mobile-img" src="./assets/access-hero-mobile.png" alt="Eurcase ACCESS front-open luggage collection" />
-          <div class="hero-product-card">
-            <span>CLOUD Series</span>
-            <h2>Cabin Case</h2>
-            <p>&#20113;&#24863;&#36731;&#37327;&#30331;&#26426;&#31665;</p>
-          </div>
+        <a class="hero-product" href="#products" aria-label="View Eurcase featured luggage">
+          <span class="hero-slide hero-slide-access is-active">
+            <img src="./assets/hero-1-access.jpg" alt="Eurcase ACCESS front-open luggage collection" />
+            <span class="hero-product-card">
+              <span>ACCESS Series</span>
+              <h2>Front-open Case</h2>
+              <p>&#24555;&#21462;&#21069;&#24320;&#26053;&#34892;&#31665;</p>
+            </span>
+          </span>
+          <span class="hero-slide hero-slide-stone">
+            <img src="./assets/hero-2-stone.jpg" alt="Eurcase STONE protective frame luggage" />
+            <span class="hero-product-card">
+              <span>STONE Series</span>
+              <h2>Frame Case</h2>
+              <p>&#22362;&#22266;&#38450;&#25252;&#38109;&#26694;&#31665;</p>
+            </span>
+          </span>
         </a>
       </section>
 
@@ -412,5 +432,22 @@
         </div>
       </div>
     </footer>
+    <script>
+      const hero = document.querySelector(".hero");
+
+      if (hero && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const panels = Array.from(hero.querySelectorAll(".hero-copy-panel"));
+        const slides = Array.from(hero.querySelectorAll(".hero-slide"));
+        const dots = Array.from(hero.querySelectorAll(".hero-dots i"));
+        let activeIndex = 0;
+
+        window.setInterval(() => {
+          activeIndex = (activeIndex + 1) % slides.length;
+          panels.forEach((panel, index) => panel.classList.toggle("is-active", index === activeIndex));
+          slides.forEach((slide, index) => slide.classList.toggle("is-active", index === activeIndex));
+          dots.forEach((dot, index) => dot.classList.toggle("active", index === activeIndex));
+        }, 5200);
+      }
+    </script>
   </body>
 </html>
