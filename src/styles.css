@@ -164,6 +164,7 @@ input {
   grid-template-columns: minmax(0, 0.86fr) minmax(360px, 1.14fr);
   min-height: calc(100vh - 108px);
   padding: clamp(42px, 7vw, 92px) clamp(20px, 5vw, 64px);
+  position: relative;
 }
 
 .hero-copy {
@@ -179,8 +180,8 @@ input {
   grid-area: 1 / 1;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(22px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
 .hero-copy-panel.is-active {
@@ -291,8 +292,16 @@ h1 {
   bottom: 22px;
   left: 22px;
   min-width: 260px;
+  opacity: 0;
   padding: 18px;
   position: absolute;
+  transform: translateY(18px);
+  transition: opacity 0.9s ease 0.72s, transform 0.9s ease 0.72s;
+}
+
+.hero-slide.is-active .hero-product-card {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes heroCopyAccess {
@@ -395,6 +404,42 @@ h1 {
 .hero-product-card p {
   color: var(--muted);
   margin-bottom: 0;
+}
+
+.hero-controls {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  pointer-events: none;
+  position: absolute;
+  right: clamp(32px, 6vw, 82px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.hero-control {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(47, 52, 50, 0.16);
+  border-radius: 999px;
+  box-shadow: 0 16px 34px rgba(47, 52, 50, 0.16);
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 34px;
+  font-weight: 400;
+  height: 52px;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: auto;
+  transition: background 0.2s ease, transform 0.2s ease;
+  width: 52px;
+}
+
+.hero-control:hover {
+  background: #fff;
+  transform: translateY(-1px);
 }
 
 .campaign-grid {
@@ -1172,6 +1217,22 @@ h1 {
 
   .hero-product-card {
     display: none;
+  }
+
+  .hero-controls {
+    justify-content: space-between;
+    left: 12px;
+    right: 12px;
+    top: 48%;
+    transform: translateY(-50%);
+  }
+
+  .hero-control {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    font-size: 30px;
+    height: 44px;
+    width: 44px;
   }
 
   .primary-action,

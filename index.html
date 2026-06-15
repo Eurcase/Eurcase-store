@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eurcase | Travel Luggage</title>
-    <link rel="stylesheet" href="./src/styles.css?v=hero-carousel-20260615" />
+    <link rel="stylesheet" href="./src/styles.css?v=hero-text-delay-20260615" />
   </head>
   <body>
     <div class="promo-bar">
@@ -91,6 +91,10 @@
             </span>
           </span>
         </a>
+        <div class="hero-controls" aria-label="Hero image controls">
+          <button class="hero-control hero-control-prev" type="button" aria-label="Previous hero image">&#8249;</button>
+          <button class="hero-control hero-control-next" type="button" aria-label="Next hero image">&#8250;</button>
+        </div>
       </section>
 
       <section class="campaign-grid" id="series-stories" aria-label="Featured series">
@@ -435,18 +439,45 @@
     <script>
       const hero = document.querySelector(".hero");
 
-      if (hero && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      if (hero) {
         const panels = Array.from(hero.querySelectorAll(".hero-copy-panel"));
         const slides = Array.from(hero.querySelectorAll(".hero-slide"));
         const dots = Array.from(hero.querySelectorAll(".hero-dots i"));
+        const previous = hero.querySelector(".hero-control-prev");
+        const next = hero.querySelector(".hero-control-next");
         let activeIndex = 0;
+        let carouselTimer;
+        let copyTimer;
 
-        window.setInterval(() => {
-          activeIndex = (activeIndex + 1) % slides.length;
-          panels.forEach((panel, index) => panel.classList.toggle("is-active", index === activeIndex));
+        const showSlide = (index) => {
+          activeIndex = (index + slides.length) % slides.length;
+          window.clearTimeout(copyTimer);
+          panels.forEach((panel) => panel.classList.remove("is-active"));
           slides.forEach((slide, index) => slide.classList.toggle("is-active", index === activeIndex));
           dots.forEach((dot, index) => dot.classList.toggle("active", index === activeIndex));
-        }, 5200);
+
+          copyTimer = window.setTimeout(() => {
+            panels.forEach((panel, index) => panel.classList.toggle("is-active", index === activeIndex));
+          }, 720);
+        };
+
+        const startCarousel = () => {
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+          window.clearInterval(carouselTimer);
+          carouselTimer = window.setInterval(() => showSlide(activeIndex + 1), 5200);
+        };
+
+        previous.addEventListener("click", () => {
+          showSlide(activeIndex - 1);
+          startCarousel();
+        });
+
+        next.addEventListener("click", () => {
+          showSlide(activeIndex + 1);
+          startCarousel();
+        });
+
+        startCarousel();
       }
     </script>
   </body>
