@@ -1,0 +1,49 @@
+{
+  "icons": [
+    {
+      "id": "WOOD",
+      "cn": "原木",
+      "file": "wood-color.svg",
+      "mono": "wood.svg",
+      "colors": "#F2D6C3 / #C48B73 / #A16F5F",
+      "meaning": "蜜桃原木切面 + 柔棕年轮，用来表达实用、多开、快取、有序。",
+      "usage": "多开旅行箱、前开/侧开结构、宽拉杆与分类收纳模块。"
+    },
+    {
+      "id": "AIR",
+      "cn": "空气",
+      "file": "air-color.svg",
+      "mono": "air.svg",
+      "colors": "#BFE0D8 / #78B8AB / #5B8F86",
+      "meaning": "薄荷雾青气流，用来表达轻便、透气、舒适背负。",
+      "usage": "旅行包、双肩包、通勤包、轻旅行背包。"
+    },
+    {
+      "id": "CLOUD",
+      "cn": "云",
+      "file": "cloud-color.svg",
+      "mono": "cloud.svg",
+      "colors": "#F1EDF8 / #C7BADB / #9A8BB6",
+      "meaning": "云雾淡紫轮廓，用来表达轻量、省力、柔和移动。",
+      "usage": "轻量旅行箱、登机箱、短途旅行箱。"
+    },
+    {
+      "id": "WATER",
+      "cn": "水",
+      "file": "water-color.svg",
+      "mono": "water.svg",
+      "colors": "#E4F6F7 / #A9D8DD / #58A9B8",
+      "meaning": "清透水蓝水滴 + 波线，用来表达灵活、扩容、可变、多场景。",
+      "usage": "旅行包、周末包、扩容包、干湿分离包。"
+    },
+    {
+      "id": "STONE",
+      "cn": "石头",
+      "file": "stone-color.svg",
+      "mono": "stone.svg",
+      "colors": "#EDE3E1 / #C1ADB1 / #8F777A",
+      "meaning": "暖灰玫瑰石面 + 盾形，用来表达坚固、防护、稳定、长途安心。",
+      "usage": "铝框箱、防护旅行箱、托运箱、长途旅行箱。"
+    }
+  ]
+}
