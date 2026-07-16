@@ -73,18 +73,18 @@
 
 二级按 Nature Series 自然元素系列：
 
-- WOOD | 原木：实用、多开、快取、有序
-- AIR | 空气：轻便、透气、舒适背负
-- CLOUD | 轻量系列
-- STONE | 防护系列
-- WATER | 水：灵活、扩容、可变、多场景
+- WOOD系列：自然质感、实用有序、可变结构，强调商务短途和出国旅行游学之间的自由切换
+- AIR系列：轻便、透气、舒适背负
+- CLOUD系列：轻、好推、省力、柔和移动
+- STONE系列：坚固、防撞、安全感
+- WATER系列：扩容、可变、多场景、灵活收纳
 
 组合示例：
 
 - Eurcase CLOUD Cabin Case | 云感轻量登机箱
 - Eurcase STONE Frame Case | 坚固防护铝框箱
-- Eurcase WOOD Front-open Case | 原木快取前开箱
-- Eurcase WATER Travel Bag | 水系灵活旅行包
+- Eurcase WOOD Front-open Case | WOOD前开箱
+- Eurcase WATER Travel Bag | WATER旅行包
 - Eurcase AIR Commuter Backpack | 轻装通勤双肩包
 
 ## 当前网站文件结构
@@ -213,11 +213,11 @@ Cloudflare Pages 设置：
 
 根据该文档，网页系列体系从旧的功能命名表达，切换到 Nature Series 自然元素体系：
 
-- WOOD | 原木：实用、多开、快取、有序
-- AIR | 空气：轻便、透气、舒适背负
-- CLOUD | 云：轻量、省力、柔和移动
-- WATER | 水：灵活、扩容、可变、多场景
-- STONE | 石头：坚固、防护、稳定、长途安心
+- WOOD系列：自然质感、实用有序、可变结构，强调商务短途和出国旅行游学之间的自由切换
+- AIR系列：轻便、透气、舒适背负
+- CLOUD系列：轻量、省力、柔和移动
+- WATER系列：灵活、扩容、可变、多场景
+- STONE系列：坚固、防护、稳定、长途安心
 
 对应调整：
 

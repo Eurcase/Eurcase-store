@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
   <title id="title">WOOD color system icon</title>
   <desc id="desc">Muted natural color version of the Apple-inspired WOOD icon.</desc>
-  <path d="M12.5 31.8c0-11.1 8.4-19.3 19.6-19.3 10.5 0 19.4 7 19.4 17.6 0 12-10 21.3-22.1 21.3-9.5 0-16.9-8.2-16.9-19.6Z" fill="#F2D6C3" stroke="#A16F5F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <g fill="none" stroke="#C48B73" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12.5 31.8c0-11.1 8.4-19.3 19.6-19.3 10.5 0 19.4 7 19.4 17.6 0 12-10 21.3-22.1 21.3-9.5 0-16.9-8.2-16.9-19.6Z" fill="#F0C8A8" stroke="#A07050" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="none" stroke="#C08860" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
     <path d="M20.8 32.4c0-7 5.3-12.2 12-12.2 6.3 0 11.6 4.3 11.6 10.7 0 7.5-6.2 13.4-13.7 13.4-5.8 0-9.9-5-9.9-11.9Z"/>
     <path d="M27 32.7c0-3.8 2.9-6.6 6.6-6.6 3.3 0 6 2.3 6 5.6 0 4-3.4 7.2-7.4 7.2-3.1 0-5.2-2.6-5.2-6.2Z"/>
     <path d="M31.9 32.4c0-1.3 1-2.3 2.3-2.3 1.1 0 2 .8 2 2 0 1.4-1.2 2.6-2.6 2.6-1 0-1.7-1-1.7-2.3Z"/>
   </g>
-  <g fill="none" stroke="#D8AB91" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#E0A880" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M18 24.4c2.6-5 8.2-8.5 15-8.2"/>
     <path d="M46.5 25c1.2 3.3 1 7.2-.8 11.2"/>
     <path d="M18.9 42.5c3.9 4.2 10 6 16.2 4.5"/>
