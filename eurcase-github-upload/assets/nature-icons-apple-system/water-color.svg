@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">WATER color system icon</title>
+  <desc id="desc">Muted natural color version of the Apple-inspired WATER icon.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 7s16 17.4 16 30.2C48 46.4 40.9 54 32 54s-16-7.6-16-16.8C16 24.4 32 7 32 7Z" fill="#E0F0E8" stroke="#409070" stroke-width="3"/>
+    <path d="M22 37c3.4-3 6.8-3 10.2 0s6.8 3 10.2 0" stroke="#308868" stroke-width="3"/>
+    <path d="M25.8 44.5c2 1.5 4.1 2.2 6.2 2.2 2.9 0 5.4-1.2 7.5-3.7" stroke="#68B898" stroke-width="3"/>
+  </g>
+</svg>

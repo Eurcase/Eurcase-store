@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">STONE color system icon</title>
+  <desc id="desc">Muted natural color version of the Apple-inspired STONE icon.</desc>
+  <path d="M18.5 17.5 32 9l13.5 8.5L52 35.8 42.5 52h-21L12 35.8l6.5-18.3Z" fill="#E8ECEF" stroke="#687080" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18.5 17.5 32 29l13.5-11.5" stroke="#8890A0" stroke-width="2.8"/>
+    <path d="M32 9v20" stroke="#AAB2B2" stroke-width="2.8"/>
+    <path d="M32 29 21.5 52" stroke="#8890A0" stroke-width="2.8"/>
+    <path d="M32 29 42.5 52" stroke="#AAB2B2" stroke-width="2.8"/>
+  </g>
+</svg>

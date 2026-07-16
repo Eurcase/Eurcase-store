@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">AIR color system icon</title>
+  <desc id="desc">Muted natural color version of the Apple-inspired AIR icon.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 26h27.5c4 0 7.2-2.9 7.2-6.5S43.5 13 39.5 13c-3 0-5.6 1.7-6.7 4.2" stroke="#88C0E8" stroke-width="3"/>
+    <path d="M14 36h33c4.4 0 8 3.2 8 7.1S51.4 50 47 50c-3.2 0-6-1.8-7.2-4.5" stroke="#5088B8" stroke-width="3"/>
+    <path d="M18 31h22" stroke="#A8D0F0" stroke-width="3"/>
+  </g>
+</svg>
