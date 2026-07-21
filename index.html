@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eurcase | Travel Luggage</title>
-    <link rel="stylesheet" href="./src/styles.css?v=hero-title-overlap-fix-20260716" />
+    <link rel="stylesheet" href="./src/styles.css?v=wood-hot-copy-distinct-20260721" />
   </head>
   <body>
     <div class="promo-bar">
@@ -21,7 +21,7 @@
       <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#categories">Cases</a>
         <a href="#series-stories">Bags</a>
-        <a href="#products">Best Sellers</a>
+        <a href="#best-sellers">Best Sellers</a>
         <a href="#series">Series</a>
         <a href="#story">Story</a>
         <a href="#care">Support</a>
@@ -49,25 +49,25 @@
       <section class="hero" id="top">
         <div class="hero-copy hero-carousel-copy">
           <div class="hero-copy-panel hero-copy-panel-geek is-active">
-            <span class="launch-badge">New Arrival</span>
+            <a class="launch-badge" href="./geek.html?lang=zh&v=geek-full-image-hero-20260721">New Arrival</a>
             <p class="eyebrow">New: GEEK Series</p>
-            <h1>Fresh color. Easy escape.</h1>
+            <h1 class="split-title" data-split-title data-zh-lines="清新配色|即刻出发。" data-en-title="Fresh color. Easy escape.">Fresh color. Easy escape.</h1>
             <p>
               Meet the Eurcase GEEK beach travel case: bright color, smooth movement, and a lighter mood for summer trips.
             </p>
             <div class="hero-actions">
-              <a class="primary-action" href="#products">Shop GEEK</a>
+              <a class="primary-action" href="./geek.html?lang=zh&v=geek-full-image-hero-20260721">Shop GEEK</a>
               <a class="secondary-action" href="#series">Explore series</a>
             </div>
           </div>
           <div class="hero-copy-panel hero-copy-panel-wood">
             <p class="eyebrow">WOOD Series</p>
-            <h1>Open neat. Move easy.</h1>
+            <h1 class="split-title" data-split-title data-zh-lines="有序开合|轻松出发。" data-en-title="Open neat. Move easy.">Open neat. Move easy.</h1>
             <p>
               Meet the Eurcase WOOD Front-open Case: organized access, warm utility, and practical compartments for work trips and easy departures.
             </p>
             <div class="hero-actions">
-              <a class="primary-action" href="#products">Shop WOOD</a>
+              <a class="primary-action" href="./wood.html?lang=zh&v=wood-full-image-hero-20260721">Shop WOOD</a>
               <a class="secondary-action" href="#categories">Shop by category</a>
             </div>
           </div>
@@ -88,16 +88,19 @@
             <i></i>
           </div>
         </div>
-        <a class="hero-product" href="#products" aria-label="View Eurcase featured luggage">
+        <div class="hero-product" aria-label="View Eurcase featured luggage">
           <span class="hero-slide hero-slide-geek is-active">
-            <img src="./assets/hero-3-geek.jpg" alt="Eurcase GEEK colorful beach travel case" />
+            <a class="hero-slide-link" href="./geek.html?lang=zh&v=geek-full-image-hero-20260721" aria-label="View GEEK Series product detail"></a>
+            <img src="./assets/geek-carousel-person-0117-20260721.jpg?v=carousel-person-0117-20260721" alt="Eurcase GEEK colorful beach travel case" />
             <span class="hero-product-card">
               <span>GEEK Series</span>
               <h2>Color Case</h2>
               <p>新品推荐旅行箱</p>
+              <span class="hero-card-link">查看商品详情</span>
             </span>
           </span>
           <span class="hero-slide hero-slide-wood">
+            <a class="hero-slide-link" href="./wood.html?lang=zh&v=wood-full-image-hero-20260721" aria-label="View WOOD Series product detail"></a>
             <img src="./assets/hero-1-access.jpg" alt="Eurcase WOOD front-open luggage collection" />
             <span class="hero-product-card">
               <span>WOOD Series</span>
@@ -113,81 +116,77 @@
               <p>&#22362;&#22266;&#38450;&#25252;&#38109;&#26694;&#31665;</p>
             </span>
           </span>
-        </a>
+        </div>
         <div class="hero-controls" aria-label="Hero image controls">
           <button class="hero-control hero-control-prev" type="button" aria-label="Previous hero image">&#8249;</button>
           <button class="hero-control hero-control-next" type="button" aria-label="Next hero image">&#8250;</button>
         </div>
       </section>
 
-      <section class="campaign-grid" id="series-stories" aria-label="Featured series">
-        <a class="campaign campaign-wood" href="#products">
-          <div class="campaign-mark">
-            <span>WOOD</span>
-            <img src="./assets/nature-icons-apple-system/wood-color.svg?v=icon-colors-20260706" alt="" />
-          </div>
-          <h2>WOOD Front-open Case</h2>
-          <p>Multi-access compartments for business short trips and overseas study travel.</p>
-        </a>
-        <a class="campaign campaign-water" href="#products">
-          <div class="campaign-mark">
-            <span>WATER</span>
-            <img src="./assets/nature-icons-apple-system/water-color.svg?v=icon-colors-20260706" alt="" />
-          </div>
-          <h2>WATER Expandable Bag</h2>
-          <p>Flexible capacity for weekends, work trips, and changing packing needs.</p>
-        </a>
-        <a class="campaign campaign-air" href="#products">
-          <div class="campaign-mark">
-            <span>AIR</span>
-            <img src="./assets/nature-icons-apple-system/air-color.svg?v=icon-colors-20260706" alt="" />
-          </div>
-          <h2>AIR Commuter Backpack</h2>
-          <p>Light carry for commuting, short trips, and airport movement.</p>
-        </a>
-      </section>
-
-      <section class="category-band" id="categories" aria-label="Shop by category">
-        <a href="#products">
-          <img src="https://images.unsplash.com/photo-1670888664974-3d74a08dea3d?auto=format&fit=crop&w=600&q=80" alt="" />
-          <span>Cases</span>
-          <small>&#26053;&#34892;&#31665;</small>
-        </a>
-        <a href="#products">
-          <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=600&q=80" alt="" />
-          <span>Bags</span>
-          <small>&#26053;&#34892;&#21253;</small>
-        </a>
-        <a href="#products">
-          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" alt="" />
-          <span>Backpacks</span>
-          <small>&#21452;&#32937;&#21253;</small>
-        </a>
-        <a href="#products">
-          <img src="https://images.unsplash.com/photo-1523779105320-d1cd346ff52b?auto=format&fit=crop&w=600&q=80" alt="" />
-          <span>Slings</span>
-          <small>&#38543;&#36523;&#21253;</small>
-        </a>
-        <a href="#products">
-          <img src="https://images.unsplash.com/photo-1581553680321-4fffae59fccd?auto=format&fit=crop&w=600&q=80" alt="" />
-          <span>Essentials</span>
-          <small>&#26053;&#34892;&#37197;&#20214;</small>
-        </a>
+      <section class="series-video-section" id="series-stories" aria-label="Featured series video">
+        <video class="series-video" src="./assets/series-stories-video.mp4?v=video-fast-start-20260717" poster="./assets/series-stories-poster.jpg?v=video-fast-start-20260717" autoplay muted loop playsinline preload="auto"></video>
+        <div class="series-video-copy">
+          <p class="section-kicker">Eurcase in motion</p>
+          <h2>Move lighter through every kind of trip.</h2>
+          <a class="secondary-action" href="#best-sellers">Explore the collection</a>
+        </div>
       </section>
 
       <section class="section product-section" id="products">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Best sellers</p>
+            <p class="section-kicker">New Arrivals</p>
             <h2>Ready for every kind of trip.</h2>
           </div>
           <a class="text-link" href="#contact">View all products</a>
         </div>
-        <div class="product-tabs" aria-label="Product view tabs">
-          <a class="active" href="#products">Best Sellers</a>
-          <a href="#products">New Arrivals</a>
+        <section class="new-arrival-screen" id="new-arrivals" aria-label="New arrival feature">
+          <div class="new-arrival-copy">
+            <p class="section-kicker">GEEK Series</p>
+            <h2 class="split-title" data-split-title data-zh-lines="3秒取物|有序出发。" data-en-title="Access fast. Pack neat.">Access fast. Pack neat.</h2>
+            <p>
+              Front pocket access, double-layer opening, and expandable room make GEEK easier to use from departure to arrival.
+            </p>
+            <div class="new-arrival-points" aria-label="GEEK key features">
+              <span>3-sec access</span>
+              <span>Double-layer opening</span>
+              <span>About 20% expansion</span>
+            </div>
+            <div class="hero-actions">
+              <a class="primary-action" href="./geek.html?lang=zh&v=geek-full-image-hero-20260721">View GEEK detail</a>
+            </div>
+          </div>
+          <div class="new-arrival-media">
+            <img src="./assets/geek-beach-cases-new-arrival-20260721.jpg?v=carousel-refresh-20260721" alt="Eurcase GEEK new arrival beach travel case" />
+          </div>
+        </section>
+        <div class="section-heading product-subheading">
+          <div>
+            <p class="section-kicker">Hot products</p>
+            <h2>Ready for every trip.</h2>
+          </div>
         </div>
-        <div class="collection-grid">
+        <section class="hot-product-screen hot-product-wood" id="wood-hot-product" aria-label="WOOD hot product feature">
+          <div class="hot-product-media">
+            <img src="./assets/wood-red-lifestyle-warm-20260721.jpg" alt="Eurcase WOOD red front-open suitcase lifestyle scene" />
+          </div>
+          <div class="hot-product-copy">
+            <p class="section-kicker">WOOD Series</p>
+            <h2 class="split-title" data-split-title data-zh-lines="前开快取|有序收纳。" data-en-title="Quick access. Order inside.">Quick access. Order inside.</h2>
+            <p>
+              Keep work documents, travel kits, and daily essentials in clear zones, ready for business trips, study travel, and every transfer in between.
+            </p>
+            <div class="new-arrival-points" aria-label="WOOD key features">
+              <span>Front-open access</span>
+              <span>Organized compartments</span>
+              <span>Flexible travel use</span>
+            </div>
+            <div class="hero-actions">
+              <a class="primary-action" href="./wood.html">View WOOD detail</a>
+            </div>
+          </div>
+        </section>
+        <div class="collection-grid" id="best-sellers">
           <article class="product-card">
             <a class="product-image" href="#contact">
               <span class="badge">Lightweight</span>
@@ -285,6 +284,34 @@
             </div>
           </article>
         </div>
+      </section>
+
+      <section class="category-band" id="categories" aria-label="Shop by category">
+        <a href="#products">
+          <img src="https://images.unsplash.com/photo-1670888664974-3d74a08dea3d?auto=format&fit=crop&w=600&q=80" alt="" />
+          <span>Cases</span>
+          <small>&#26053;&#34892;&#31665;</small>
+        </a>
+        <a href="#products">
+          <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=600&q=80" alt="" />
+          <span>Bags</span>
+          <small>&#26053;&#34892;&#21253;</small>
+        </a>
+        <a href="#products">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" alt="" />
+          <span>Backpacks</span>
+          <small>&#21452;&#32937;&#21253;</small>
+        </a>
+        <a href="#products">
+          <img src="https://images.unsplash.com/photo-1523779105320-d1cd346ff52b?auto=format&fit=crop&w=600&q=80" alt="" />
+          <span>Slings</span>
+          <small>&#38543;&#36523;&#21253;</small>
+        </a>
+        <a href="#products">
+          <img src="https://images.unsplash.com/photo-1581553680321-4fffae59fccd?auto=format&fit=crop&w=600&q=80" alt="" />
+          <span>Essentials</span>
+          <small>&#26053;&#34892;&#37197;&#20214;</small>
+        </a>
       </section>
 
       <section class="feature-shop">
@@ -504,12 +531,16 @@
         ["Shop STONE", "选购 STONE"],
         ["Explore series", "查看系列"],
         ["Fresh color. Easy escape.", "清新配色，即刻出发。"],
+        ["Access fast. Pack neat.", "3秒取物，有序出发。"],
         ["New Arrival", "新品上市"],
         [
           "Meet the Eurcase GEEK beach travel case: bright color, smooth movement, and a lighter mood for summer trips.",
           "Eurcase GEEK新品旅行箱以明亮配色与顺滑移动体验，适合海边度假、周末短途和轻松出游。"
         ],
         ["Shop GEEK", "选购 GEEK"],
+        ["Eurcase in motion", "Eurcase 动态影像"],
+        ["Move lighter through every kind of trip.", "轻松移动，适合每一种旅程。"],
+        ["Explore the collection", "探索产品系列"],
         ["GEEK Series", "GEEK系列"],
         ["Color Case", "彩色旅行箱"],
         ["新品推荐旅行箱", "新品推荐旅行箱"],
@@ -531,8 +562,29 @@
         ["Essentials", "旅行配件"],
         ["Best sellers", "热卖产品"],
         ["Ready for every kind of trip.", "适合每一种出行。"],
+        ["Hot products", "热销产品"],
+        ["Ready for every trip.", "从容应对每一次出行。"],
+        ["Quick access. Order inside.", "前开快取，有序收纳。"],
         ["View all products", "查看全部产品"],
         ["New Arrivals", "新品上市"],
+        [
+          "Front pocket access, double-layer opening, and expandable room make GEEK easier to use from departure to arrival.",
+          "前开快取、双层双开和约20%扩容，把途中拿取、分区收纳和临时加装都处理得更轻松。"
+        ],
+        ["3-sec access", "3秒取物"],
+        ["Double-layer opening", "双层双开"],
+        ["About 20% expansion", "约20%扩容"],
+        ["View GEEK detail", "查看 GEEK 详情"],
+        ["Scroll to best sellers", "下滑看热卖产品"],
+        ["Best Seller", "热卖产品"],
+        [
+          "Keep work documents, travel kits, and daily essentials in clear zones, ready for business trips, study travel, and every transfer in between.",
+          "把工作文件、旅行用品和随身小物分区放好，商务短途、出国游学和途中转场都更从容。"
+        ],
+        ["Front-open access", "前开快取"],
+        ["Organized compartments", "有序分区"],
+        ["Flexible travel use", "多场景切换"],
+        ["View WOOD detail", "查看 WOOD 详情"],
         ["Lightweight", "轻量"],
         ["Protective", "防护"],
         ["Front-open", "前开"],
@@ -614,6 +666,17 @@
         node.nodeValue = node.nodeValue.replace(trimmed, pair[lang]);
       };
 
+      const applySplitTitles = (lang) => {
+        document.querySelectorAll("[data-split-title]").forEach((title) => {
+          if (lang === "zh") {
+            const lines = (title.dataset.zhLines || "").split("|").filter(Boolean);
+            title.innerHTML = lines.map((line) => `<span class="title-line">${line}</span>`).join("");
+          } else {
+            title.textContent = title.dataset.enTitle || title.textContent;
+          }
+        });
+      };
+
       const applyLanguage = (lang) => {
         document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
         document.title = lang === "zh" ? "Eurcase 欧优 | 旅行箱包" : "Eurcase | Travel Luggage";
@@ -629,6 +692,7 @@
         const nodes = [];
         while (walker.nextNode()) nodes.push(walker.currentNode);
         nodes.forEach((node) => replaceTextNode(node, lang));
+        applySplitTitles(lang);
 
         document.querySelectorAll("[data-lang-toggle]").forEach((button) => {
           const isMobileToggle = button.classList.contains("mobile-language-toggle");
@@ -655,6 +719,26 @@
           applyLanguage(current === "zh" ? "en" : "zh");
         });
       });
+
+      const alignHashTarget = () => {
+        const targetId = window.location.hash.slice(1);
+        if (!targetId) return;
+        const target = document.getElementById(targetId);
+        if (target) {
+          const top = target.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top, behavior: "auto" });
+        }
+      };
+
+      window.addEventListener("hashchange", () => {
+        window.setTimeout(alignHashTarget, 0);
+      });
+
+      if (document.readyState === "complete") {
+        window.setTimeout(alignHashTarget, 80);
+      } else {
+        window.addEventListener("load", () => window.setTimeout(alignHashTarget, 80));
+      }
 
       const hero = document.querySelector(".hero");
 
@@ -701,3 +785,6 @@
     </script>
   </body>
 </html>
+
+
+
