@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eurcase | Mobile Preview</title>
+    <style>
+      :root {
+        --ink: #2f3432;
+        --paper: #f5f7f4;
+        --brand: #7f9a8a;
+        --line: rgba(47, 52, 50, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        align-items: center;
+        background:
+          radial-gradient(circle at top left, rgba(127, 154, 138, 0.2), transparent 34%),
+          var(--paper);
+        color: var(--ink);
+        display: flex;
+        font-family: "Aptos", "Segoe UI", sans-serif;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+        padding: 24px;
+      }
+
+      .preview-shell {
+        width: min(100%, 390px);
+      }
+
+      .preview-label {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+
+      .preview-label strong {
+        font-size: 15px;
+      }
+
+      .preview-label span {
+        color: rgba(47, 52, 50, 0.62);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .phone-frame {
+        background: #101312;
+        border-radius: 34px;
+        box-shadow: 0 26px 80px rgba(47, 52, 50, 0.24);
+        padding: 12px;
+      }
+
+      iframe {
+        background: #fff;
+        border: 0;
+        border-radius: 24px;
+        display: block;
+        height: min(844px, calc(100vh - 110px));
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="preview-shell">
+      <div class="preview-label">
+        <strong>Eurcase 鎵嬫満鐗堟湰鍦伴瑙?/strong>
+        <span>390px mobile viewport</span>
+      </div>
+      <div class="phone-frame">
+        <iframe src="./index.html?lang=zh&v=detail-display-fix-20260722#top" title="Eurcase mobile preview"></iframe>
+      </div>
+    </main>
+  </body>
+</html>
+
+
+

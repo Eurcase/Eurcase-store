@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eurcase WOOD | 前开快取旅行箱</title>
-    <link rel="stylesheet" href="./src/styles.css?v=wood-full-image-hero-20260721" />
+    <link rel="stylesheet" href="./src/styles.css?v=detail-display-fix-20260722" />
   </head>
   <body class="product-detail-page wood-detail-page">
     <div class="promo-bar">
-      <span data-zh="热卖产品：WOOD系列" data-en="Best seller: WOOD Series">热卖产品：WOOD系列</span>
+      <span data-zh="热销产品：WOOD系列" data-en="Best seller: WOOD Series">热销产品：WOOD系列</span>
       <span data-zh="前开快取 · 双层双开 · 有序分区" data-en="Front access · double opening · organized compartments">前开快取 · 双层双开 · 有序分区</span>
       <span data-zh="商务短途和出国旅行游学的自由切换" data-en="Switch easily between business trips and overseas study travel">商务短途和出国旅行游学的自由切换</span>
     </div>
@@ -18,38 +18,31 @@
         <span class="brand-mark">E</span>
         <span>Eurcase</span>
       </a>
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="./index.html#categories" data-zh="旅行箱" data-en="Cases">旅行箱</a>
-        <a href="./index.html#series-stories" data-zh="旅行包" data-en="Bags">旅行包</a>
-        <a href="./index.html#best-sellers" data-zh="热卖产品" data-en="Best Sellers">热卖产品</a>
-        <a href="./index.html#series" data-zh="系列" data-en="Series">系列</a>
-        <a href="./index.html#story" data-zh="品牌故事" data-en="Story">品牌故事</a>
-      </nav>
-      <div class="header-actions" aria-label="Shopping actions">
-        <a href="./index.html#products" data-zh="搜索" data-en="Search">搜索</a>
-        <a href="#contact" data-zh="账户" data-en="Account">账户</a>
-        <a class="cart-pill" href="#contact" data-zh="购物车 0" data-en="Cart 0">购物车 0</a>
-        <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language">EN</button>
-      </div>
-      <div class="mobile-actions" aria-label="Mobile shopping actions">
-        <button class="language-toggle mobile-language-toggle" type="button" data-lang-toggle aria-label="Switch language">EN</button>
-        <a href="./index.html#products" aria-label="Search">Search</a>
-        <a href="#contact" aria-label="Account">Account</a>
-        <a href="#contact" aria-label="Cart">Cart</a>
-      </div>
-      <button class="icon-button" aria-label="Open navigation">
+      <form class="site-search" action="./index.html#products" role="search">
+        <label class="sr-only" for="wood-site-search-input">Search Eurcase</label>
+        <span aria-hidden="true"></span>
+        <input id="wood-site-search-input" type="search" name="q" placeholder="搜索旅行箱、包袋、系列" data-search-input />
+      </form>
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language">EN</button>
+      <button class="icon-button" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
         <span></span>
         <span></span>
         <span></span>
       </button>
+      <nav class="menu-nav" aria-label="Primary navigation" data-menu-panel>
+        <a href="./index.html#products" data-zh="产品" data-en="Products">产品</a>
+        <a href="./index.html#series" data-zh="系列" data-en="Series">系列</a>
+        <a href="./index.html#story" data-zh="品牌故事" data-en="Story">品牌故事</a>
+        <a href="./index.html#care" data-zh="支持" data-en="Support">支持</a>
+      </nav>
     </header>
 
     <main>
       <section class="geek-hero geek-hero-full wood-hero wood-hero-full">
         <div class="geek-hero-copy wood-hero-copy">
-          <span class="launch-badge" data-zh="热卖产品" data-en="Best Seller">热卖产品</span>
+          <span class="launch-badge" data-zh="热销产品" data-en="Best Seller">热销产品</span>
           <p class="section-kicker">WOOD Series</p>
-          <h1 class="split-title" data-split-title data-zh-lines="有序开合|轻松出发。" data-en-title="Open neat. Move easy." data-zh="有序开合，轻松出发。" data-en="Open neat. Move easy.">有序开合，轻松出发。</h1>
+          <h1 class="split-title" data-split-title data-zh-lines="有序开合|轻松出发" data-en-title="Open neat. Move easy." data-zh="有序开合，轻松出发" data-en="Open neat. Move easy.">有序开合，轻松出发</h1>
           <p data-zh="Eurcase WOOD前开旅行箱采用可变结构、多开快取与有序分区设计，适合商务短途和出国旅行游学的自由切换。" data-en="Eurcase WOOD front-open suitcase combines a flexible structure, quick access, and organized compartments for switching between business short trips and overseas study travel.">
             Eurcase WOOD前开旅行箱采用可变结构、多开快取与有序分区设计，适合商务短途和出国旅行游学的自由切换。
           </p>
@@ -65,7 +58,7 @@
 
       <section class="geek-product-summary wood-product-summary" id="details">
         <div class="geek-product-photo wood-product-photo">
-          <img src="./assets/wood/sku-01.jpg" alt="Eurcase WOOD white front-open suitcase" />
+          <img src="./assets/wood/wood-white-front-no-logo.jpg" alt="Eurcase WOOD white front-open suitcase" />
         </div>
         <div class="geek-product-copy">
           <p class="section-kicker">Product</p>
@@ -86,7 +79,7 @@
             </div>
             <div>
               <strong data-zh="双层双开" data-en="Double opening">双层双开</strong>
-              <span data-zh="前仓与主仓分层打开，干净衣物和随身物品互不打扰。" data-en="Front and main compartments open separately, keeping clothing and essentials apart.">前仓与主仓分层打开，干净衣物和随身物品互不打扰。</span>
+              <span data-zh="前仓与主仓分层打开，衣物和随身物品互不打扰。" data-en="Front and main compartments open separately, keeping clothing and essentials apart.">前仓与主仓分层打开，衣物和随身物品互不打扰。</span>
             </div>
             <div>
               <strong data-zh="有序分区" data-en="Organized layout">有序分区</strong>
@@ -246,13 +239,13 @@
           <span class="brand-mark">E</span>
           <span>Eurcase</span>
         </a>
-        <p>WOOD Series | Front-open suitcase</p>
+        <p data-zh="WOOD系列 | 前开快取旅行箱" data-en="WOOD Series | Front-open suitcase">WOOD系列 | 前开快取旅行箱</p>
       </div>
       <div class="footer-columns">
         <div>
           <h3>Shop</h3>
-          <a href="./index.html#products">Best sellers</a>
-          <a href="./index.html#series">Series</a>
+          <a href="./index.html#wood-hot-product" data-zh="WOOD 旅行箱" data-en="WOOD Case">WOOD 旅行箱</a>
+          <a href="./index.html#series" data-zh="系列" data-en="Series">系列</a>
         </div>
         <div>
           <h3>Contact</h3>
@@ -284,9 +277,15 @@
           node.placeholder = node.dataset[`placeholder${lang === "zh" ? "Zh" : "En"}`];
           node.setAttribute("aria-label", node.placeholder);
         });
+        const searchInput = document.querySelector("[data-search-input]");
+        if (searchInput) {
+          searchInput.placeholder = lang === "zh" ? "搜索旅行箱、包袋、系列" : "Search luggage, bags, series";
+          searchInput.setAttribute("aria-label", searchInput.placeholder);
+        }
         document.querySelectorAll("[data-lang-toggle]").forEach((button) => {
           button.textContent = lang === "zh" ? "EN" : "中文";
         });
+        document.title = lang === "zh" ? "Eurcase WOOD | 前开快取旅行箱" : "Eurcase WOOD | Front-open Suitcase";
         const next = new URL(window.location.href);
         next.searchParams.set("lang", lang);
         window.history.replaceState({}, "", next);
@@ -297,6 +296,43 @@
           applyLanguage(currentLang === "zh" ? "en" : "zh");
         });
       });
+
+      const menuToggle = document.querySelector("[data-menu-toggle]");
+      const menuPanel = document.querySelector("[data-menu-panel]");
+
+      if (menuToggle && menuPanel) {
+        const setMenuOpen = (isOpen) => {
+          menuToggle.classList.toggle("is-open", isOpen);
+          menuPanel.classList.toggle("is-open", isOpen);
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+        };
+
+        menuToggle.addEventListener("click", () => {
+          setMenuOpen(!menuPanel.classList.contains("is-open"));
+        });
+
+        menuPanel.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => setMenuOpen(false));
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!menuPanel.classList.contains("is-open")) return;
+          if (menuPanel.contains(event.target) || menuToggle.contains(event.target)) return;
+          setMenuOpen(false);
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") setMenuOpen(false);
+        });
+      }
+
+      const searchForm = document.querySelector(".site-search");
+
+      if (searchForm) {
+        searchForm.addEventListener("submit", () => {
+          window.location.href = "./index.html#products";
+        });
+      }
 
       const colorButtons = Array.from(document.querySelectorAll("[data-color-target]"));
       const colorSlides = Array.from(document.querySelectorAll("[data-color-slide]"));
