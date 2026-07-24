@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eurcase | Travel Luggage</title>
-    <link rel="stylesheet" href="./src/styles.css?v=mobile-hero-breathing-20260724" />
+    <link rel="stylesheet" href="./src/styles.css?v=video-click-cover-20260724" />
   </head>
   <body>
     <div class="promo-bar">
@@ -117,7 +117,12 @@
       </section>
 
       <section class="series-video-section" id="series-stories" aria-label="Featured series video">
-        <video class="series-video" data-play-when-visible src="./assets/series-stories-video-full-20260722.mp4?v=video-full-length-20260722" poster="./assets/series-stories-poster.jpg?v=video-fast-start-20260717" muted loop playsinline preload="metadata"></video>
+        <div class="series-video-frame" data-video-frame>
+          <video class="series-video" src="./assets/series-stories-video-full-20260722.mp4?v=video-full-length-20260722" poster="./assets/series-stories-poster.jpg?v=video-fast-start-20260717" muted loop playsinline preload="metadata"></video>
+          <button class="series-video-play" type="button" data-video-play aria-label="Play Eurcase brand video">
+            <span></span>
+          </button>
+        </div>
         <div class="series-video-copy">
           <p class="section-kicker">Eurcase in motion</p>
           <h2>Move lighter through every kind of trip.</h2>
@@ -146,7 +151,7 @@
             <h3>Frame case</h3>
             <p>Reinforced structure for checked luggage and long trips.</p>
           </a>
-          <a class="nature-series-card" href="./geek.html?lang=zh&v=mobile-hero-breathing-20260724">
+          <a class="nature-series-card" href="./geek.html?lang=zh&v=video-click-cover-20260724">
             <img class="series-icon" src="./assets/nature-icons-apple-system/cloud-color.svg?v=icon-colors-20260706" alt="" />
             <span>CLOUD</span>
             <h3>Lightweight case</h3>
@@ -720,65 +725,38 @@
         window.addEventListener("load", () => window.setTimeout(alignHashTarget, 80));
       }
 
-      const visiblePlayVideos = Array.from(document.querySelectorAll("video[data-play-when-visible]"));
+      const videoFrames = Array.from(document.querySelectorAll("[data-video-frame]"));
 
-      if (visiblePlayVideos.length) {
-        const visibleVideos = new WeakSet();
-        const playVisibleVideo = (video) => {
-          video.play().catch(() => {});
+      videoFrames.forEach((frame) => {
+        const video = frame.querySelector("video");
+        const playButton = frame.querySelector("[data-video-play]");
+        if (!video || !playButton) return;
+
+        video.pause();
+        video.currentTime = 0;
+
+        const markPlaying = () => frame.classList.add("is-playing");
+        const markPaused = () => frame.classList.remove("is-playing");
+
+        const playVideo = () => {
+          video.play().then(markPlaying).catch(() => {});
         };
 
-        visiblePlayVideos.forEach((video) => {
-          video.pause();
-          video.currentTime = 0;
-          video.addEventListener("ended", () => {
-            if (!visibleVideos.has(video)) return;
-            video.currentTime = 0;
-            playVisibleVideo(video);
-          });
+        playButton.addEventListener("click", playVideo);
+        video.addEventListener("click", () => {
+          if (video.paused) {
+            playVideo();
+          } else {
+            video.pause();
+          }
         });
-
-        if ("IntersectionObserver" in window) {
-          const videoObserver = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                const video = entry.target;
-                if (entry.isIntersecting) {
-                  visibleVideos.add(video);
-                  playVisibleVideo(video);
-                } else {
-                  visibleVideos.delete(video);
-                  video.pause();
-                }
-              });
-            },
-            { rootMargin: "0px", threshold: 0.45 }
-          );
-
-          visiblePlayVideos.forEach((video) => videoObserver.observe(video));
-        } else {
-          const checkVideos = () => {
-            visiblePlayVideos.forEach((video) => {
-              const rect = video.getBoundingClientRect();
-              const visibleTop = Math.max(rect.top, 0);
-              const visibleBottom = Math.min(rect.bottom, window.innerHeight);
-              const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-              const isVisible = visibleHeight >= rect.height * 0.45;
-              if (isVisible) {
-                visibleVideos.add(video);
-                playVisibleVideo(video);
-              } else {
-                visibleVideos.delete(video);
-                video.pause();
-              }
-            });
-          };
-
-          window.addEventListener("scroll", checkVideos, { passive: true });
-          window.addEventListener("resize", checkVideos);
-          checkVideos();
-        }
-      }
+        video.addEventListener("play", markPlaying);
+        video.addEventListener("pause", markPaused);
+        video.addEventListener("ended", () => {
+          video.currentTime = 0;
+          markPaused();
+        });
+      });
 
       const hero = document.querySelector(".hero");
 
