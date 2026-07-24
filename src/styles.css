@@ -3242,12 +3242,12 @@ h1 {
   }
 
   .product-section .section-heading .section-kicker {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .product-section .section-heading h2 {
-    font-size: clamp(29px, 7.6vw, 36px);
-    line-height: 1.08;
+    font-size: clamp(32px, 8.4vw, 40px);
+    line-height: 1.06;
     max-width: none;
     white-space: nowrap;
   }
@@ -3270,15 +3270,17 @@ h1 {
   }
 
   .new-arrival-copy {
-    padding: 30px 18px 34px;
+    padding: 30px 20px 34px;
   }
 
   .new-arrival-copy h2 {
-    font-size: clamp(34px, 9vw, 42px);
+    font-size: clamp(30px, 7.8vw, 36px);
+    line-height: 1.08;
   }
 
   .new-arrival-copy > p:not(.section-kicker) {
-    font-size: 14px;
+    font-size: 13.5px;
+    line-height: 1.72;
   }
 
   .hot-product-screen {
@@ -3305,11 +3307,21 @@ h1 {
   }
 
   .hot-product-copy {
-    padding: 30px 18px 34px;
+    padding: 30px 20px 34px;
   }
 
   .hot-product-backpack .hot-product-copy {
-    padding: 30px 18px 36px;
+    padding: 30px 20px 36px;
+  }
+
+  .product-transition-heading {
+    padding: 38px 20px 22px;
+  }
+
+  .product-transition-heading h2 {
+    font-size: clamp(32px, 8.4vw, 40px);
+    line-height: 1.06;
+    white-space: nowrap;
   }
 
   .air-hero img {
@@ -3338,15 +3350,17 @@ h1 {
   }
 
   .air-feature-grid article > div {
-    padding: 28px 18px 34px;
+    padding: 28px 20px 34px;
   }
 
   .air-feature-grid h2 {
-    font-size: clamp(30px, 8.4vw, 40px);
+    font-size: clamp(28px, 7.6vw, 34px);
+    line-height: 1.1;
   }
 
   .air-feature-grid p:not(.section-kicker) {
-    font-size: 14px;
+    font-size: 13.5px;
+    line-height: 1.68;
   }
 
   .air-color-card {
@@ -3360,11 +3374,13 @@ h1 {
   }
 
   .hot-product-copy h2 {
-    font-size: clamp(34px, 9vw, 42px);
+    font-size: clamp(30px, 7.8vw, 36px);
+    line-height: 1.08;
   }
 
   .hot-product-copy > p:not(.section-kicker) {
-    font-size: 14px;
+    font-size: 13.5px;
+    line-height: 1.72;
   }
 
   .new-arrival-points {
@@ -3387,7 +3403,7 @@ h1 {
   }
 
   .product-info {
-    padding: 30px 18px 34px;
+    padding: 30px 20px 34px;
   }
 
   .product-card,
@@ -3410,11 +3426,13 @@ h1 {
   }
 
   .product-info h3 {
-    font-size: clamp(30px, 9vw, 42px);
+    font-size: clamp(28px, 7.6vw, 34px);
+    line-height: 1.1;
   }
 
   .product-info p {
-    font-size: 14px;
+    font-size: 13.5px;
+    line-height: 1.68;
   }
 
   .product-meta {
