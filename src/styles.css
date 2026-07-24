@@ -162,16 +162,21 @@ input {
 }
 
 .language-toggle {
+  align-items: center;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--ink);
   cursor: pointer;
+  display: inline-flex;
   font-size: 13px;
   font-weight: 780;
+  justify-content: center;
+  line-height: 1;
   min-height: 34px;
   min-width: 54px;
   padding: 7px 12px;
+  white-space: nowrap;
 }
 
 .language-toggle:hover {
@@ -409,8 +414,11 @@ h1 {
   font-size: 14px;
   font-weight: 760;
   justify-content: center;
+  line-height: 1.1;
   min-height: 44px;
   padding: 0 18px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .primary-action,
@@ -2708,11 +2716,11 @@ h1 {
   .site-header {
     align-items: center;
     display: grid;
-    gap: 8px;
-    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    gap: 10px;
+    grid-template-columns: 42px minmax(0, 1fr) 56px 42px;
     height: 66px;
     min-height: 66px;
-    padding: 0 14px;
+    padding: 0 16px;
     position: sticky;
     top: 0;
     z-index: 20;
@@ -2740,16 +2748,34 @@ h1 {
     display: flex;
     height: 40px;
     justify-self: stretch;
+    max-width: none;
     min-width: 0;
+    padding: 0 12px;
     position: relative;
     z-index: 22;
+    width: 100%;
   }
 
   .site-header .language-toggle,
   .site-header .icon-button {
     display: inline-flex;
+    flex: 0 0 auto;
     position: relative;
     z-index: 22;
+  }
+
+  .site-header .language-toggle {
+    height: 42px;
+    min-height: 42px;
+    min-width: 56px;
+    padding: 0 12px;
+    width: 56px;
+  }
+
+  .site-header .icon-button {
+    height: 42px;
+    min-height: 42px;
+    width: 42px;
   }
 
   .site-header .menu-nav {
