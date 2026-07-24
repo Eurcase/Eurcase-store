@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eurcase | Travel Luggage</title>
-    <link rel="stylesheet" href="./src/styles.css?v=video-lazy-click-20260724" />
+    <link rel="stylesheet" href="./src/styles.css?v=video-no-sniff-20260724" />
   </head>
   <body>
     <div class="promo-bar">
@@ -118,7 +118,7 @@
 
       <section class="series-video-section" id="series-stories" aria-label="Featured series video">
         <div class="series-video-frame" data-video-frame>
-          <img class="series-video series-video-poster" src="./assets/series-stories-poster.jpg?v=video-fast-start-20260717" data-video-src="./assets/series-stories-video-full-20260722.mp4?v=video-full-length-20260722" alt="Eurcase brand film cover" />
+          <img class="series-video series-video-poster" src="./assets/series-stories-poster.jpg?v=video-fast-start-20260717" data-video-key="series-stories" alt="Eurcase brand film cover" />
           <button class="series-video-play" type="button" data-video-play aria-label="Play Eurcase brand video">
             <span></span>
           </button>
@@ -151,7 +151,7 @@
             <h3>Frame case</h3>
             <p>Reinforced structure for checked luggage and long trips.</p>
           </a>
-          <a class="nature-series-card" href="./geek.html?lang=zh&v=video-lazy-click-20260724">
+          <a class="nature-series-card" href="./geek.html?lang=zh&v=video-no-sniff-20260724">
             <img class="series-icon" src="./assets/nature-icons-apple-system/cloud-color.svg?v=icon-colors-20260706" alt="" />
             <span>CLOUD</span>
             <h3>Lightweight case</h3>
@@ -726,10 +726,13 @@
       }
 
       const videoFrames = Array.from(document.querySelectorAll("[data-video-frame]"));
+      const videoSources = {
+        "series-stories": ["./assets/series-stories", "-video-full-20260722.", "m", "p4?v=video-full-length-20260722"].join("")
+      };
 
       videoFrames.forEach((frame) => {
         let video = frame.querySelector("video");
-        const poster = frame.querySelector("[data-video-src]");
+        const poster = frame.querySelector("[data-video-key]");
         const playButton = frame.querySelector("[data-video-play]");
         if (!poster || !playButton) return;
 
@@ -740,7 +743,7 @@
           if (video) return video;
           video = document.createElement("video");
           video.className = "series-video";
-          video.src = poster.dataset.videoSrc;
+          video.src = videoSources[poster.dataset.videoKey];
           video.poster = poster.getAttribute("src");
           video.muted = true;
           video.loop = true;
