@@ -2723,7 +2723,7 @@ h1 {
   .hero {
     align-items: end;
     display: grid;
-    min-height: 430px;
+    min-height: max(620px, calc(100svh - 104px));
     overflow: hidden;
     padding: 0;
     position: relative;
@@ -3058,7 +3058,7 @@ h1 {
   .series-video-section {
     background: var(--mist);
     min-height: 0;
-    padding: 0;
+    padding: clamp(26px, 8vw, 44px) 0 0;
   }
 
   .series-video-bg {
