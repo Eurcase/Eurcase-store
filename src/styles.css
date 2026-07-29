@@ -1770,25 +1770,37 @@ h1 {
 }
 
 .story-stats {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(47, 52, 50, 0.14);
   display: grid;
-  gap: 18px;
+  gap: 14px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 36px;
   padding-top: 28px;
 }
 
+.story-stats div {
+  background: rgba(245, 247, 244, 0.66);
+  border: 1px solid rgba(47, 52, 50, 0.1);
+  border-radius: 8px;
+  min-height: 122px;
+  padding: 18px 16px;
+}
+
 .story-stats strong {
   display: block;
-  font-size: 42px;
+  color: var(--brand);
+  font-size: 14px;
+  letter-spacing: 0.08em;
   line-height: 1;
+  text-transform: uppercase;
 }
 
 .story-stats span {
-  color: var(--muted);
+  color: rgba(47, 52, 50, 0.78);
   display: block;
   font-size: 14px;
-  margin-top: 8px;
+  line-height: 1.45;
+  margin-top: 14px;
 }
 
 .journal-strip {
