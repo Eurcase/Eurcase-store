@@ -3831,6 +3831,60 @@ h1 {
   .footer {
     padding: 34px 18px;
   }
+
+  html[lang="en"] h1,
+  html[lang="en"] h2,
+  html[lang="en"] .split-title,
+  html[lang="en"] .split-title .title-line,
+  html[lang="en"] .campaign h2,
+  html[lang="en"] .product-section .section-heading h2,
+  html[lang="en"] .product-transition-heading h2,
+  html[lang="en"] .new-arrival-copy h2,
+  html[lang="en"] .hot-product-copy h2,
+  html[lang="en"] .product-info h3,
+  html[lang="en"] .air-expandable-hero-copy h1,
+  html[lang="en"] .expandable-feature-card h2,
+  html[lang="en"] .geek-hero-copy h1,
+  html[lang="en"] .geek-product-copy h2,
+  html[lang="en"] .geek-color-copy h2,
+  html[lang="en"] .geek-feature-band h2,
+  html[lang="en"] .geek-lifestyle h2,
+  html[lang="en"] .geek-detail-image h2,
+  html[lang="en"] .newsletter h2,
+  html[lang="en"] .story-copy h2,
+  html[lang="en"] .journal-strip h2 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    white-space: normal;
+    word-break: normal;
+  }
+
+  html[lang="en"] .hero-copy-panel h1,
+  html[lang="en"] .geek-hero-copy h1,
+  html[lang="en"] .air-expandable-hero-copy h1 {
+    font-size: 34px;
+    line-height: 1.02;
+  }
+
+  html[lang="en"] .product-section .section-heading h2,
+  html[lang="en"] .product-transition-heading h2,
+  html[lang="en"] .new-arrival-copy h2,
+  html[lang="en"] .hot-product-copy h2,
+  html[lang="en"] .geek-product-copy h2,
+  html[lang="en"] .geek-color-copy h2 {
+    font-size: 32px;
+    line-height: 1.06;
+  }
+
+  html[lang="en"] .geek-feature-band h2,
+  html[lang="en"] .expandable-feature-card h2,
+  html[lang="en"] .geek-lifestyle h2,
+  html[lang="en"] .geek-detail-image h2,
+  html[lang="en"] .newsletter h2 {
+    font-size: 28px;
+    line-height: 1.08;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
