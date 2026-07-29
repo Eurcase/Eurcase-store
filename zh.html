@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eurcase | Chinese Version</title>
+    <meta http-equiv="refresh" content="0; url=./index.html?lang=zh" />
+    <script>
+      const target = new URL("./index.html", window.location.href);
+      target.searchParams.set("lang", "zh");
+      if (window.location.hash) target.hash = window.location.hash;
+      window.location.replace(target);
+    </script>
+  </head>
+  <body>
+    <p>Opening Eurcase Chinese version...</p>
+  </body>
+</html>
