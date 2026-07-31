@@ -324,7 +324,7 @@ input {
 }
 
 .hero-copy-panel-wood::after {
-  background-image: url("../assets/nature-icons-apple-system/wood-color.svg");
+  background-image: url("../assets/nature-icons-apple-system/wood-color.svg?v=wood-icon-20260731");
 }
 
 .hero-copy-panel-stone::after {
@@ -1176,7 +1176,7 @@ h1 {
 }
 
 .hot-product-wood .hot-product-copy::after {
-  background-image: url("../assets/nature-icons-apple-system/wood-color.svg");
+  background-image: url("../assets/nature-icons-apple-system/wood-color.svg?v=wood-icon-20260731");
 }
 
 .hot-product-backpack {
@@ -2085,7 +2085,7 @@ h1 {
 }
 
 .wood-detail-page .geek-product-copy::after {
-  background-image: url("../assets/nature-icons-apple-system/wood-color.svg");
+  background-image: url("../assets/nature-icons-apple-system/wood-color.svg?v=wood-icon-20260731");
 }
 
 .air-detail-page .geek-product-copy::after {
