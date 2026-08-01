@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +21,7 @@
         <span aria-hidden="true"></span>
         <input id="air-expandable-search-input" type="search" name="q" placeholder="搜索旅行箱、旅行包、系列" data-search-input />
       </form>
-      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language">EN</button>
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language">中文</button>
       <button class="icon-button" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
         <span></span>
         <span></span>
@@ -189,8 +189,21 @@
     </footer>
 
     <script>
-      const pageLang = new URLSearchParams(window.location.search).get("lang") === "en" ? "en" : "zh";
+      const languageParam = new URLSearchParams(window.location.search).get("lang");
+      const pageLang = languageParam === "zh" ? "zh" : "en";
       const langToggle = document.querySelector("[data-lang-toggle]");
+
+      const syncLanguageLinks = (lang) => {
+        document.querySelectorAll('a[href*=".html"]').forEach((link) => {
+          const rawHref = link.getAttribute("href");
+          if (!rawHref || rawHref.startsWith("http") || rawHref.startsWith("#")) return;
+          const [pathWithQuery, hash = ""] = rawHref.split("#");
+          const [linkPath, query = ""] = pathWithQuery.split("?");
+          const params = new URLSearchParams(query);
+          params.set("lang", lang);
+          link.setAttribute("href", `${linkPath}?${params.toString()}${hash ? `#${hash}` : ""}`);
+        });
+      };
 
       const applyDataTranslations = (lang) => {
         document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
@@ -205,9 +218,10 @@
           input.setAttribute("aria-label", input.placeholder);
         });
         if (langToggle) {
-          langToggle.textContent = lang === "zh" ? "EN" : "中";
+          langToggle.textContent = lang === "zh" ? "EN" : "中文";
           langToggle.setAttribute("aria-label", lang === "zh" ? "Switch to English" : "切换到中文");
         }
+        syncLanguageLinks(lang);
       };
 
       const setLanguage = (lang) => {
@@ -218,7 +232,7 @@
       };
 
       langToggle?.addEventListener("click", () => {
-        const current = new URLSearchParams(window.location.search).get("lang") === "en" ? "en" : "zh";
+        const current = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
         setLanguage(current === "zh" ? "en" : "zh");
       });
 
@@ -231,7 +245,7 @@
 
       document.querySelectorAll("a[href^='./index.html#']").forEach((link) => {
         link.addEventListener("click", () => {
-          const lang = new URLSearchParams(window.location.search).get("lang") === "en" ? "en" : "zh";
+          const lang = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
           link.href = link.href.replace(/index\.html(\?lang=(zh|en))?#/, `index.html?lang=${lang}#`);
         });
       });

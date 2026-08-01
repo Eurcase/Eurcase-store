@@ -693,23 +693,16 @@
         }
 
         syncLanguageLinks(lang);
-        window.localStorage.setItem("eurcase-language", lang);
       };
 
       const languageParams = new URLSearchParams(window.location.search);
       const previewLanguage = languageParams.get("lang");
-      const defaultLanguageReadyKey = "eurcase-default-language-20260729";
-      if (!window.localStorage.getItem(defaultLanguageReadyKey)) {
-        window.localStorage.removeItem("eurcase-language");
-        window.localStorage.setItem(defaultLanguageReadyKey, "true");
-      }
-      const savedLanguage = window.localStorage.getItem("eurcase-language");
-      const initialLanguage = previewLanguage === "zh" || previewLanguage === "en" ? previewLanguage : savedLanguage || "en";
+      const initialLanguage = previewLanguage === "zh" ? "zh" : "en";
       applyLanguage(initialLanguage);
 
       document.querySelectorAll("[data-lang-toggle]").forEach((button) => {
         button.addEventListener("click", () => {
-          const current = window.localStorage.getItem("eurcase-language") || "en";
+          const current = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
           const nextLanguage = current === "zh" ? "en" : "zh";
           const nextUrl = new URL(window.location.href);
           nextUrl.searchParams.set("lang", nextLanguage);

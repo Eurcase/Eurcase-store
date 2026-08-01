@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +23,7 @@
         <span aria-hidden="true"></span>
         <input id="wood-site-search-input" type="search" name="q" placeholder="搜索旅行箱、包袋、系列" data-search-input />
       </form>
-      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language">EN</button>
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language">中文</button>
       <button class="icon-button" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
         <span></span>
         <span></span>
@@ -257,7 +257,19 @@
 
     <script>
       const params = new URLSearchParams(window.location.search);
-      let currentLang = params.get("lang") === "en" ? "en" : "zh";
+      let currentLang = params.get("lang") === "zh" ? "zh" : "en";
+
+      function syncLanguageLinks(lang) {
+        document.querySelectorAll('a[href*=".html"]').forEach((link) => {
+          const rawHref = link.getAttribute("href");
+          if (!rawHref || rawHref.startsWith("http") || rawHref.startsWith("#")) return;
+          const [pathWithQuery, hash = ""] = rawHref.split("#");
+          const [linkPath, query = ""] = pathWithQuery.split("?");
+          const linkParams = new URLSearchParams(query);
+          linkParams.set("lang", lang);
+          link.setAttribute("href", `${linkPath}?${linkParams.toString()}${hash ? `#${hash}` : ""}`);
+        });
+      }
 
       function applyLanguage(lang) {
         currentLang = lang;
@@ -286,6 +298,7 @@
           button.textContent = lang === "zh" ? "EN" : "中文";
         });
         document.title = lang === "zh" ? "Eurcase WOOD | 前开快取旅行箱" : "Eurcase WOOD | Front-open Suitcase";
+        syncLanguageLinks(lang);
         const next = new URL(window.location.href);
         next.searchParams.set("lang", lang);
         window.history.replaceState({}, "", next);
