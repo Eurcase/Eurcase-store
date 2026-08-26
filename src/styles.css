@@ -109,6 +109,10 @@ input {
   width: 34px;
 }
 
+.brand-compact-mark {
+  display: none;
+}
+
 .brand-mobile-mark {
   align-items: center;
   background: transparent;
@@ -131,20 +135,19 @@ input {
   align-items: center;
   display: inline-flex;
   flex: 0 0 auto;
-  height: 40px;
-  justify-content: flex-start;
+  height: 36px;
+  justify-content: center;
   overflow: hidden;
-  width: clamp(108px, 12vw, 150px);
+  width: clamp(116px, 12vw, 154px);
 }
 
 .brand-logo-image {
   display: block;
-  height: 100%;
+  height: auto;
   max-width: none;
   object-fit: contain;
-  object-position: left center;
-  transform: scale(1.62);
-  transform-origin: left center;
+  object-position: center;
+  transform: none;
   width: 100%;
 }
 
@@ -3046,11 +3049,12 @@ h1 {
   margin-bottom: 12px;
 }
 
-.footer-brand .brand-mark {
+.footer-brand .brand-logo-frame {
   background: #fff;
-  color: #2f3432;
-  height: 38px;
-  width: 38px;
+  border-radius: 999px;
+  height: 42px;
+  padding: 0 14px;
+  width: 168px;
 }
 
 .footer-columns {
@@ -3105,11 +3109,12 @@ h1 {
     justify-self: start;
   }
 
-  .brand-mobile-mark {
+  .site-header .brand-compact-mark {
     display: inline-flex;
   }
 
-  .brand > span:last-child {
+  .site-header .brand-logo-frame,
+  .site-header .brand-name {
     display: none;
   }
 
@@ -3256,11 +3261,12 @@ h1 {
     z-index: 22;
   }
 
-  .site-header .brand-mobile-mark {
+  .site-header .brand-compact-mark {
     display: inline-flex;
   }
 
-  .site-header .brand > span:last-child {
+  .site-header .brand-logo-frame,
+  .site-header .brand-name {
     display: none;
   }
 
