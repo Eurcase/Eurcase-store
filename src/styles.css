@@ -3101,12 +3101,14 @@ h1 {
 
 @media (max-width: 900px) {
   .site-header {
-    gap: 8px;
-    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    gap: 10px;
+    grid-template-columns: minmax(0, 1fr) auto auto;
   }
 
   .brand {
+    grid-column: 1;
     justify-self: start;
+    overflow: hidden;
   }
 
   .site-header .brand-compact-mark {
@@ -3115,8 +3117,8 @@ h1 {
 
   .site-header .brand-logo-frame {
     display: inline-flex;
-    height: 30px;
-    width: 92px;
+    height: 32px;
+    width: min(132px, 32vw);
   }
 
   .site-header .brand-name {
@@ -3124,6 +3126,8 @@ h1 {
   }
 
   .site-search {
+    grid-column: 1 / -1;
+    grid-row: 2;
     height: 38px;
     justify-self: stretch;
     padding: 0 12px;
@@ -3135,6 +3139,7 @@ h1 {
   }
 
   .language-toggle {
+    grid-column: 2;
     font-size: 12px;
     height: 38px;
     min-height: 38px;
@@ -3143,6 +3148,7 @@ h1 {
   }
 
   .icon-button {
+    grid-column: 3;
     height: 38px;
     justify-self: end;
     width: 38px;
@@ -3261,7 +3267,9 @@ h1 {
   }
 
   .site-header .brand {
+    grid-column: 1;
     min-width: 42px;
+    overflow: hidden;
     position: relative;
     z-index: 22;
   }
@@ -3272,8 +3280,8 @@ h1 {
 
   .site-header .brand-logo-frame {
     display: inline-flex;
-    height: 30px;
-    width: 92px;
+    height: 32px;
+    width: min(132px, 32vw);
   }
 
   .site-header .brand-name {
@@ -3282,6 +3290,8 @@ h1 {
 
   .site-header .site-search {
     display: flex;
+    grid-column: 1 / -1;
+    grid-row: 2;
     height: 40px;
     justify-self: stretch;
     max-width: none;
