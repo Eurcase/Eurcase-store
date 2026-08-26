@@ -4391,6 +4391,10 @@ h1 {
     overflow: hidden;
   }
 
+  .site-header .brand-mark {
+    display: none !important;
+  }
+
   .site-header .brand-logo-frame {
     display: inline-flex;
     height: 24px;
