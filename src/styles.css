@@ -3110,10 +3110,15 @@ h1 {
   }
 
   .site-header .brand-compact-mark {
-    display: inline-flex;
+    display: none;
   }
 
-  .site-header .brand-logo-frame,
+  .site-header .brand-logo-frame {
+    display: inline-flex;
+    height: 30px;
+    width: 92px;
+  }
+
   .site-header .brand-name {
     display: none;
   }
@@ -3262,10 +3267,15 @@ h1 {
   }
 
   .site-header .brand-compact-mark {
-    display: inline-flex;
+    display: none;
   }
 
-  .site-header .brand-logo-frame,
+  .site-header .brand-logo-frame {
+    display: inline-flex;
+    height: 30px;
+    width: 92px;
+  }
+
   .site-header .brand-name {
     display: none;
   }
