@@ -2,6 +2,26 @@
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Eurcase · 产品手册</title>
 <style>
 :root{--ink:#102f2a;--paper:#f1eddf;--accent:#c26230}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#d9dad4;font-family:'Microsoft YaHei','Segoe UI',sans-serif}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:2px solid var(--accent);outline-offset:5px}button:disabled{opacity:.25;cursor:default}header{height:88px;margin:0 4vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #102f2a22}.brand{font-size:14px;letter-spacing:3px}.brand small{display:block;font-size:10px;letter-spacing:2px;margin-top:8px;color:#61716a}.tools{display:flex;gap:10px}.tools button{border:0;background:transparent;padding:12px;font-size:12px}.tools button:hover{background:#ffffff40}main{height:calc(100dvh - 200px);min-height:320px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#eff0e9 0%,#d9dad400 65%)}.book{height:min(calc(100dvh - 260px),65vw);width:min(calc((100dvh - 260px)*1.4142),92vw);position:relative;perspective:2300px;transform:translateX(-25%);transition:transform .85s ease;isolation:isolate}.page{width:50%;height:100%;position:absolute;top:0;background-color:var(--paper);background-repeat:no-repeat;background-size:100% 100%;box-shadow:0 2px 2px #13282022,0 18px 32px #13282026;overflow:hidden}.left{left:0}.right{left:50%}.page:after{content:'';position:absolute;inset:0;pointer-events:none}.left:after{background:linear-gradient(90deg,transparent 91%,#23392e16 98%,#0003)}.right:after{background:linear-gradient(90deg,#0003,#23392e12 3%,transparent 10%)}.page.empty{visibility:hidden}.sheet{position:absolute;top:0;left:50%;height:100%;width:50%;transform-origin:left center;transform-style:preserve-3d;z-index:5;pointer-events:none}.face{position:absolute;width:100%;height:100%;backface-visibility:hidden;background-color:var(--paper);background-repeat:no-repeat;background-size:100% 100%;box-shadow:0 8px 20px #0002}.face:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0002,transparent 18%,#fff1 75%,#0001)}.back{transform:rotateY(180deg)}.face.empty{background:transparent;box-shadow:none}.edge{position:absolute;top:42%;border:1px solid #102f2a30;background:#e6e7dfaa;width:40px;height:56px;font-size:24px;z-index:10}.edge:hover{background:var(--paper)}#prev{left:2vw}#next{right:2vw}footer{text-align:center;height:112px;padding:10px 20px 18px}.position{font-size:12px;letter-spacing:1px;min-height:18px}.dots{display:flex;justify-content:center;gap:15px;margin:15px 0}.dots button{width:26px;height:3px;padding:0;border:0;background:#a8b1a8;transition:background .2s}.dots button[aria-current=true]{background:var(--accent)}.hint{font-size:10px;color:#61716a;letter-spacing:1px}.start{border:0;background:var(--ink);color:var(--paper);padding:10px 24px;margin-top:8px;font-size:12px}.start[hidden]{display:none}dialog{border:0;background:var(--paper);color:var(--ink);max-width:90vw;max-height:90dvh;padding:28px;box-shadow:0 30px 100px #0006}dialog::backdrop{background:#102f2acc;backdrop-filter:blur(6px)}.dialog-head{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:22px}.dialog-head h2{font-size:16px;font-weight:400;margin:0;letter-spacing:2px}.close{background:transparent;border:1px solid #102f2a44;padding:7px 16px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.tile{padding:0;border:0;background:none;text-align:left}.tile img{display:block;width:220px;height:156px;object-fit:contain;background:#d9dad4}.tile span{display:block;margin-top:12px;font-size:12px}.tile:hover span{color:var(--accent)}#zoom{width:96vw;max-width:96vw;height:94dvh;max-height:94dvh}#zoom .dialog-head{margin-bottom:15px}#zoomport{height:calc(100% - 50px);overflow:auto;text-align:center;background:#d9dad4}#zoomimg{height:100%;max-width:100%;object-fit:contain;cursor:zoom-in}#zoomimg.large{height:auto;width:1600px;max-width:none;cursor:zoom-out}.zoomnote{font-size:11px;color:#61716a;margin-left:auto}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}@media(max-width:650px){header{height:72px}.brand{font-size:12px;letter-spacing:2px}.brand small{font-size:8px}.tools{gap:0}.tools button{padding:9px 7px;font-size:11px}main{height:calc(100dvh - 210px)}.book{height:65vw;width:92vw}.edge{top:auto;bottom:10px;height:38px;width:44px}.grid{grid-template-columns:repeat(2,1fr);gap:18px}.tile img{width:30vw;height:23vw}.tile span{font-size:10px}.zoomnote{display:none}dialog{padding:20px}}@media(prefers-reduced-motion:reduce){.book{transition:none}}
+#zoompage{background-repeat:no-repeat;background-color:var(--paper);width:100%;aspect-ratio:1748/2480;cursor:zoom-in}
+#zoompage[hidden]{display:none}
+#zoompage.large{width:220%;cursor:zoom-out}
+@media(max-width:650px){
+ header{height:52px;margin:0 12px}.brand{font-size:12px}.brand small{display:none}
+ .tools button{font-size:12px;padding:12px 8px}#full{display:none}
+ main{height:auto;min-height:0;display:block;padding:8px 4px 58px;overflow:hidden}
+ .book{width:100%;height:auto;aspect-ratio:1748/2480;transform:none!important;transition:none;margin:0}
+ .page{width:100%;height:100%}.right{display:none}.left{left:0}
+ .left:after{background:none}.page{box-shadow:0 3px 12px #13282022}
+ .edge{top:auto;bottom:5px;height:42px;width:54px}#prev{left:14px}#next{right:14px}
+ footer{height:auto;padding:0 12px 14px}.position{font-size:12px;letter-spacing:0}
+ .dots{margin:9px 0 5px;gap:9px}.dots button{height:20px;background:linear-gradient(#a8b1a8,#a8b1a8) center/100% 3px no-repeat}
+ .dots button[aria-current=true]{background:linear-gradient(var(--accent),var(--accent)) center/100% 3px no-repeat}
+ .hint{font-size:11px;letter-spacing:0}
+ #zoom{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;padding:10px 4px}
+ #zoom .dialog-head{height:38px;margin:0 8px 8px;gap:8px}#zoomtitle{font-size:12px;letter-spacing:0}
+ #zoomport{height:calc(100% - 46px);text-align:left;touch-action:pan-x pan-y pinch-zoom}
+}
+
 </style><meta name="description" content="Eurcase 产品手册：WOOD、GEEK 旅行箱与 AIR 背包。翻阅产品设计与旅行收纳细节。"></head><body>
 <header><div class="brand">EURCASE <small>PRODUCT BOOK · 产品手册</small></div><div class="tools"><button id="contents">目录</button><button id="magnify">放大阅读</button><button id="full">全屏</button></div></header>
 <main id="stage"><button class="edge" id="prev" aria-label="上一页">‹</button><div class="book" id="book" aria-label="Eurcase 产品手册"><div id="left" class="page left"></div><div id="right" class="page right"></div></div><button class="edge" id="next" aria-label="下一页">›</button></main>
@@ -24,4 +44,70 @@ labels.forEach((label,i)=>{const b=document.createElement('button');b.setAttribu
 $('prev').onclick=()=>go(current-1);$('next').onclick=$('start').onclick=()=>go(current+1);$('contents').onclick=()=>$('toc').showModal();$('magnify').onclick=()=>{$('zoomimg').src=assets[current];$('zoomimg').classList.remove('large');$('zoomtitle').textContent=labels[current];$('zoom').showModal()};$('zoomimg').onclick=()=>$('zoomimg').classList.toggle('large');document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).close());$('full').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch(e){$('full').textContent='请使用 F11'}};document.addEventListener('fullscreenchange',()=>{$('full').textContent=document.fullscreenElement?'退出全屏':'全屏'});
 document.addEventListener('keydown',e=>{if(document.querySelector('dialog[open]'))return;if(['ArrowRight','ArrowLeft','Home','End'].includes(e.key)){e.preventDefault();go(e.key==='ArrowRight'?current+1:e.key==='ArrowLeft'?current-1:e.key==='Home'?0:5)}});
 let down=null;$('book').style.touchAction='pan-y';$('book').addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY}});$('book').addEventListener('pointerup',e=>{if(!down)return;const dx=e.clientX-down.x,dy=e.clientY-down.y;down=null;if(Math.abs(dx)>35&&Math.abs(dx)>Math.abs(dy)){go(current+(dx<0?1:-1));return}if(Math.abs(dy)>15)return;const rect=$('book').getBoundingClientRect();go(current+(e.clientX>rect.left+rect.width/2?1:-1))});$('book').addEventListener('pointercancel',()=>down=null);render();
+// Responsive single-page reader; desktop keeps the original spread animation.
+const mobileQuery=matchMedia('(max-width:650px)');
+let mobilePage=0;
+const spreadRender=render,spreadGo=go;
+const spreadOf=p=>p===0?0:p===9?5:Math.ceil(p/2);
+const firstOf=s=>s===0?0:s===5?9:s*2-1;
+function mobileSide(){return side(spreadOf(mobilePage),mobilePage===0?'right':mobilePage===9?'left':mobilePage%2?'left':'right')}
+function pageLabel(){return mobilePage===0?labels[0]:mobilePage===9?labels[5]:`${String(mobilePage).padStart(2,'0')} / 08 · ${labels[spreadOf(mobilePage)].split(' / ')[1]}`}
+render=function(){
+ if(!mobileQuery.matches){spreadRender();return}
+ current=spreadOf(mobilePage);paint($('left'),mobileSide());paint($('right'),null);
+ $('book').style.transform='none';$('position').textContent=pageLabel();
+ $('prev').disabled=mobilePage===0;$('next').disabled=mobilePage===9;
+ $('start').hidden=true;$('hint').hidden=false;$('hint').textContent='左右滑动翻页 · 点「放大阅读」查看细节';
+ [...$('dots').children].forEach((b,i)=>b.setAttribute('aria-current',String(i===current)));
+ $('book').setAttribute('aria-label',pageLabel());
+};
+async function turnPage(target){
+ if(!mobileQuery.matches)return spreadGo(target);
+ if(busy||target<0||target>9||target===mobilePage)return;
+ busy=true;const forward=target>mobilePage;mobilePage=target;render();
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ await $('left').animate([{transform:`perspective(1200px) rotateY(${forward?12:-12}deg) translateX(${forward?6:-6}%)`,opacity:.5},{transform:'perspective(1200px) rotateY(0deg) translateX(0)',opacity:1}],{duration:reduced?1:320,easing:'ease-out'}).finished;
+ busy=false;
+}
+go=function(target){return mobileQuery.matches?turnPage(firstOf(target)):spreadGo(target)};
+function step(delta){return turnPage((mobileQuery.matches?mobilePage:current)+delta)}
+$('prev').onclick=()=>step(-1);$('next').onclick=$('start').onclick=()=>step(1);
+// Replace the original pointer handlers with a page-aware hit area.
+const oldBook=$('book'),newBook=oldBook.cloneNode(true);oldBook.replaceWith(newBook);
+let contact=null;
+newBook.addEventListener('pointerdown',e=>{contact={x:e.clientX,y:e.clientY};newBook.setPointerCapture(e.pointerId)});
+newBook.addEventListener('pointerup',e=>{
+ if(!contact)return;const dx=e.clientX-contact.x,dy=e.clientY-contact.y;contact=null;
+ if(Math.abs(dx)>35&&Math.abs(dx)>Math.abs(dy)){step(dx<0?1:-1);return}
+ if(Math.abs(dx)>15||Math.abs(dy)>15)return;
+ const rect=newBook.getBoundingClientRect();step(e.clientX>rect.left+rect.width/2?1:-1);
+});
+newBook.addEventListener('pointercancel',()=>contact=null);
+document.addEventListener('keydown',e=>{
+ if(!mobileQuery.matches||document.querySelector('dialog[open]'))return;
+ if(['ArrowRight','ArrowLeft','Home','End'].includes(e.key)){
+  e.preventDefault();e.stopImmediatePropagation();
+  turnPage(e.key==='Home'?0:e.key==='End'?9:mobilePage+(e.key==='ArrowRight'?1:-1));
+ }
+},true);
+const zoomPage=document.createElement('div');zoomPage.id='zoompage';zoomPage.setAttribute('role','img');$('zoomport').append(zoomPage);
+$('magnify').onclick=()=>{
+ const mobile=mobileQuery.matches;
+ $('zoomimg').hidden=mobile;zoomPage.hidden=!mobile;
+ $('zoomimg').classList.remove('large');zoomPage.classList.remove('large');
+ $('zoomtitle').textContent=mobile?pageLabel():labels[current];
+ if(mobile){paint(zoomPage,mobileSide());zoomPage.setAttribute('aria-label',pageLabel())}
+ else $('zoomimg').src=assets[current];
+ $('zoom').showModal();$('zoomport').scrollTo(0,0);
+};
+zoomPage.onclick=()=>zoomPage.classList.toggle('large');
+mobileQuery.addEventListener('change',async()=>{
+ // Let any in-flight page finish before remapping the viewport.
+ while(busy)await new Promise(resolve=>setTimeout(resolve,40));
+ if(mobileQuery.matches)mobilePage=firstOf(current);
+ else{$('hint').textContent='点击页面或左右箭头翻页 · 支持键盘 ← → 与滑动';current=spreadOf(mobilePage)}
+ if($('zoom').open)$('zoom').close();render();
+});
+render();
+
 </script></body></html>
