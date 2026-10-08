@@ -29,41 +29,42 @@
 <dialog id="toc"><div class="dialog-head"><h2>CONTENTS / 目录</h2><button class="close" data-close="toc">关闭</button></div><div id="grid" class="grid"></div></dialog>
 <dialog id="zoom"><div class="dialog-head"><h2 id="zoomtitle">放大阅读</h2><span class="zoomnote">点击画面放大，滚动查看细节</span><button class="close" data-close="zoom">关闭</button></div><div id="zoomport"><img id="zoomimg" alt="当前手册页面高清预览"></div></dialog>
 <script>
-const assets=["images/page-0-20261008.webp","images/page-1-20261008.webp","images/page-2-20261008.webp","images/page-3-20261008.webp","images/page-4-20261008.webp","images/page-5-20261008.webp"];
-const labels=['封面 · YOUR CASE, YOUR WAY','01 — 02 / WOOD · 双层双开','03 — 04 / GEEK · 便捷取用','05 — 06 / AIR · 轻装出发','07 — 08 / AIR · 扩容收纳','封底 · 为每一次出发'];
+const assets=["images/clean-craft-edition-0-20261008.webp","images/clean-craft-edition-1-20261008.webp","images/clean-craft-edition-2-20261008.webp","images/clean-craft-edition-3-20261008.webp","images/clean-craft-edition-4-20261008.webp","images/clean-craft-edition-5-20261008.webp","images/clean-craft-edition-6-20261008.webp"];
+const LAST_SPREAD=assets.length-1, LAST_PAGE=(assets.length-2)*2+1;
+const labels=['封面 · YOUR CASE, YOUR WAY','01 — 02 / 品牌介绍 · 真正好用','03 — 04 / WOOD · 双层双开','05 — 06 / GEEK · 便捷取用','07 — 08 / AIR · 轻装出发','09 — 10 / AIR · 扩容收纳','封底 · 为每一次出发'];
 const $=id=>document.getElementById(id);let current=0,busy=false;
-function side(n,s){if((n===0&&s==='left')||(n===5&&s==='right'))return null;
+function side(n,s){if((n===0&&s==='left')||(n===LAST_SPREAD&&s==='right'))return null;
 // These source spreads end the photograph at x=1724, before the x=1748 fold.
 // Scale uniformly to bleed the photograph to the fold, including turning faces.
-const bleed=s==='left'&&[1,2,4].includes(n),scale=1748/1724;
-return {url:assets[n],size:(n===0||n===5)?'100% 100%':bleed?`${200*scale}% ${100*scale}%`:'200% 100%',pos:s==='left'?'left center':'right center'};}
+const bleed=s==='left'&&[2,3,5].includes(n),scale=1748/1724;
+return {url:assets[n],size:(n===0||n===LAST_SPREAD)?'100% 100%':bleed?`${200*scale}% ${100*scale}%`:'200% 100%',pos:s==='left'?'left center':'right center'};}
 function paint(el,data){el.classList.toggle('empty',!data);el.style.backgroundImage=data?'url("'+data.url+'")':'none';el.style.backgroundSize=data?.size||'';el.style.backgroundPosition=data?.pos||'';}
-function render(){paint($('left'),side(current,'left'));paint($('right'),side(current,'right'));$('book').style.transform=current===0?'translateX(-25%)':current===5?'translateX(25%)':'translateX(0)';$('position').textContent=labels[current];$('prev').disabled=current===0;$('next').disabled=current===5;$('start').hidden=current!==0;$('hint').hidden=current===0;[...$('dots').children].forEach((b,i)=>b.setAttribute('aria-current',String(i===current)));$('book').setAttribute('aria-label',labels[current]);}
-async function go(target){if(busy||target===current||target<0||target>5)return;busy=true;const old=current;const forward=target>old;const sheet=document.createElement('div');sheet.className='sheet';const front=document.createElement('div'),back=document.createElement('div');front.className='face front';back.className='face back';paint(front,side(forward?old:target,'right'));paint(back,side(forward?target:old,'left'));sheet.append(front,back);$('book').append(sheet);if(forward)paint($('right'),side(target,'right'));else paint($('left'),side(target,'left'));$('book').style.transform=target===0?'translateX(-25%)':target===5?'translateX(25%)':'translateX(0)';const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;await sheet.animate([{transform:forward?'rotateY(0deg)':'rotateY(-180deg)'},{transform:forward?'rotateY(-180deg)':'rotateY(0deg)'}],{duration:reduced?1:850,easing:'cubic-bezier(.3,.05,.2,1)',fill:'forwards'}).finished;current=target;sheet.remove();render();busy=false;}
+function render(){paint($('left'),side(current,'left'));paint($('right'),side(current,'right'));$('book').style.transform=current===0?'translateX(-25%)':current===LAST_SPREAD?'translateX(25%)':'translateX(0)';$('position').textContent=labels[current];$('prev').disabled=current===0;$('next').disabled=current===LAST_SPREAD;$('start').hidden=current!==0;$('hint').hidden=current===0;[...$('dots').children].forEach((b,i)=>b.setAttribute('aria-current',String(i===current)));$('book').setAttribute('aria-label',labels[current]);}
+async function go(target){if(busy||target===current||target<0||target>LAST_SPREAD)return;busy=true;const old=current;const forward=target>old;const sheet=document.createElement('div');sheet.className='sheet';const front=document.createElement('div'),back=document.createElement('div');front.className='face front';back.className='face back';paint(front,side(forward?old:target,'right'));paint(back,side(forward?target:old,'left'));sheet.append(front,back);$('book').append(sheet);if(forward)paint($('right'),side(target,'right'));else paint($('left'),side(target,'left'));$('book').style.transform=target===0?'translateX(-25%)':target===LAST_SPREAD?'translateX(25%)':'translateX(0)';const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;await sheet.animate([{transform:forward?'rotateY(0deg)':'rotateY(-180deg)'},{transform:forward?'rotateY(-180deg)':'rotateY(0deg)'}],{duration:reduced?1:850,easing:'cubic-bezier(.3,.05,.2,1)',fill:'forwards'}).finished;current=target;sheet.remove();render();busy=false;}
 labels.forEach((label,i)=>{const b=document.createElement('button');b.setAttribute('aria-label',label);b.onclick=()=>go(i);$('dots').append(b);const tile=document.createElement('button');tile.className='tile';const img=document.createElement('img');img.src=assets[i];img.alt=label;const span=document.createElement('span');span.textContent=label;tile.append(img,span);tile.onclick=()=>{$('toc').close();go(i)};$('grid').append(tile)});
 $('prev').onclick=()=>go(current-1);$('next').onclick=$('start').onclick=()=>go(current+1);$('contents').onclick=()=>$('toc').showModal();$('magnify').onclick=()=>{$('zoomimg').src=assets[current];$('zoomimg').classList.remove('large');$('zoomtitle').textContent=labels[current];$('zoom').showModal()};$('zoomimg').onclick=()=>$('zoomimg').classList.toggle('large');document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).close());$('full').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch(e){$('full').textContent='请使用 F11'}};document.addEventListener('fullscreenchange',()=>{$('full').textContent=document.fullscreenElement?'退出全屏':'全屏'});
-document.addEventListener('keydown',e=>{if(document.querySelector('dialog[open]'))return;if(['ArrowRight','ArrowLeft','Home','End'].includes(e.key)){e.preventDefault();go(e.key==='ArrowRight'?current+1:e.key==='ArrowLeft'?current-1:e.key==='Home'?0:5)}});
+document.addEventListener('keydown',e=>{if(document.querySelector('dialog[open]'))return;if(['ArrowRight','ArrowLeft','Home','End'].includes(e.key)){e.preventDefault();go(e.key==='ArrowRight'?current+1:e.key==='ArrowLeft'?current-1:e.key==='Home'?0:LAST_SPREAD)}});
 let down=null;$('book').style.touchAction='pan-y';$('book').addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY}});$('book').addEventListener('pointerup',e=>{if(!down)return;const dx=e.clientX-down.x,dy=e.clientY-down.y;down=null;if(Math.abs(dx)>35&&Math.abs(dx)>Math.abs(dy)){go(current+(dx<0?1:-1));return}if(Math.abs(dy)>15)return;const rect=$('book').getBoundingClientRect();go(current+(e.clientX>rect.left+rect.width/2?1:-1))});$('book').addEventListener('pointercancel',()=>down=null);render();
 // Responsive single-page reader; desktop keeps the original spread animation.
 const mobileQuery=matchMedia('(max-width:650px)');
 let mobilePage=0;
 const spreadRender=render,spreadGo=go;
-const spreadOf=p=>p===0?0:p===9?5:Math.ceil(p/2);
-const firstOf=s=>s===0?0:s===5?9:s*2-1;
-function mobileSide(){return side(spreadOf(mobilePage),mobilePage===0?'right':mobilePage===9?'left':mobilePage%2?'left':'right')}
-function pageLabel(){return mobilePage===0?labels[0]:mobilePage===9?labels[5]:`${String(mobilePage).padStart(2,'0')} / 08 · ${labels[spreadOf(mobilePage)].split(' / ')[1]}`}
+const spreadOf=p=>p===0?0:p===LAST_PAGE?LAST_SPREAD:Math.ceil(p/2);
+const firstOf=s=>s===0?0:s===LAST_SPREAD?LAST_PAGE:s*2-1;
+function mobileSide(){return side(spreadOf(mobilePage),mobilePage===0?'right':mobilePage===LAST_PAGE?'left':mobilePage%2?'left':'right')}
+function pageLabel(){return mobilePage===0?labels[0]:mobilePage===LAST_PAGE?labels[LAST_SPREAD]:`${String(mobilePage).padStart(2,'0')} / 10 · ${labels[spreadOf(mobilePage)].split(' / ')[1]}`}
 render=function(){
  if(!mobileQuery.matches){spreadRender();return}
  current=spreadOf(mobilePage);paint($('left'),mobileSide());paint($('right'),null);
  $('book').style.transform='none';$('position').textContent=pageLabel();
- $('prev').disabled=mobilePage===0;$('next').disabled=mobilePage===9;
+ $('prev').disabled=mobilePage===0;$('next').disabled=mobilePage===LAST_PAGE;
  $('start').hidden=true;$('hint').hidden=false;$('hint').textContent='左右滑动翻页 · 点「放大阅读」查看细节';
  [...$('dots').children].forEach((b,i)=>b.setAttribute('aria-current',String(i===current)));
  $('book').setAttribute('aria-label',pageLabel());
 };
 async function turnPage(target){
  if(!mobileQuery.matches)return spreadGo(target);
- if(busy||target<0||target>9||target===mobilePage)return;
+ if(busy||target<0||target>LAST_PAGE||target===mobilePage)return;
  busy=true;const forward=target>mobilePage;mobilePage=target;render();
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  await $('left').animate([{transform:`perspective(1200px) rotateY(${forward?12:-12}deg) translateX(${forward?6:-6}%)`,opacity:.5},{transform:'perspective(1200px) rotateY(0deg) translateX(0)',opacity:1}],{duration:reduced?1:320,easing:'ease-out'}).finished;
@@ -87,7 +88,7 @@ document.addEventListener('keydown',e=>{
  if(!mobileQuery.matches||document.querySelector('dialog[open]'))return;
  if(['ArrowRight','ArrowLeft','Home','End'].includes(e.key)){
   e.preventDefault();e.stopImmediatePropagation();
-  turnPage(e.key==='Home'?0:e.key==='End'?9:mobilePage+(e.key==='ArrowRight'?1:-1));
+  turnPage(e.key==='Home'?0:e.key==='End'?LAST_PAGE:mobilePage+(e.key==='ArrowRight'?1:-1));
  }
 },true);
 const zoomPage=document.createElement('div');zoomPage.id='zoompage';zoomPage.setAttribute('role','img');$('zoomport').append(zoomPage);
