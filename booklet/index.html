@@ -29,9 +29,9 @@
 <dialog id="toc"><div class="dialog-head"><h2>CONTENTS / 目录</h2><button class="close" data-close="toc">关闭</button></div><div id="grid" class="grid"></div></dialog>
 <dialog id="zoom"><div class="dialog-head"><h2 id="zoomtitle">放大阅读</h2><span class="zoomnote">点击画面放大，滚动查看细节</span><button class="close" data-close="zoom">关闭</button></div><div id="zoomport"><img id="zoomimg" alt="当前手册页面高清预览"></div></dialog>
 <script>
-const assets=["images/clean-craft-edition-0-20261008.webp","images/clean-craft-edition-1-20261008.webp","images/clean-craft-edition-2-20261008.webp","images/clean-craft-edition-3-20261008.webp","images/clean-craft-edition-4-20261008.webp","images/clean-craft-edition-5-20261008.webp","images/clean-craft-edition-6-20261008.webp"];
+const assets=["images/wanning-partner-edition-0-20261009.webp","images/wanning-partner-edition-1-20261009.webp","images/wanning-partner-edition-2-20261009.webp","images/wanning-partner-edition-3-20261009.webp","images/wanning-partner-edition-4-20261009.webp","images/wanning-partner-edition-5-20261009.webp","images/wanning-partner-edition-6-20261009.webp","images/wanning-partner-edition-7-20261009.webp","images/wanning-partner-edition-8-20261009.webp"];
 const LAST_SPREAD=assets.length-1, LAST_PAGE=(assets.length-2)*2+1;
-const labels=['封面 · YOUR CASE, YOUR WAY','01 — 02 / 品牌介绍 · 真正好用','03 — 04 / WOOD · 双层双开','05 — 06 / GEEK · 便捷取用','07 — 08 / AIR · 轻装出发','09 — 10 / AIR · 扩容收纳','封底 · 为每一次出发'];
+const labels=['封面 · YOUR CASE, YOUR WAY','01 — 02 / 品牌介绍 · 真正好用','03 — 04 / WOOD · 双层双开','05 — 06 / GEEK · 便捷取用','07 — 08 / AIR · 轻装出发','09 — 10 / AIR · 扩容收纳','11 — 12 / TRAVEL CASE · 城市出行','13 — 14 / 合作机会 · 联系我们','封底 · 为每一次出发'];
 const $=id=>document.getElementById(id);let current=0,busy=false;
 function side(n,s){if((n===0&&s==='left')||(n===LAST_SPREAD&&s==='right'))return null;
 // These source spreads end the photograph at x=1724, before the x=1748 fold.
@@ -52,7 +52,7 @@ const spreadRender=render,spreadGo=go;
 const spreadOf=p=>p===0?0:p===LAST_PAGE?LAST_SPREAD:Math.ceil(p/2);
 const firstOf=s=>s===0?0:s===LAST_SPREAD?LAST_PAGE:s*2-1;
 function mobileSide(){return side(spreadOf(mobilePage),mobilePage===0?'right':mobilePage===LAST_PAGE?'left':mobilePage%2?'left':'right')}
-function pageLabel(){return mobilePage===0?labels[0]:mobilePage===LAST_PAGE?labels[LAST_SPREAD]:`${String(mobilePage).padStart(2,'0')} / 10 · ${labels[spreadOf(mobilePage)].split(' / ')[1]}`}
+function pageLabel(){return mobilePage===0?labels[0]:mobilePage===LAST_PAGE?labels[LAST_SPREAD]:`${String(mobilePage).padStart(2,'0')} / ${LAST_PAGE-1} · ${labels[spreadOf(mobilePage)].split(' / ')[1]}`}
 render=function(){
  if(!mobileQuery.matches){spreadRender();return}
  current=spreadOf(mobilePage);paint($('left'),mobileSide());paint($('right'),null);
@@ -111,4 +111,6 @@ mobileQuery.addEventListener('change',async()=>{
 });
 render();
 
+const requestedSpread=Number(new URLSearchParams(location.search).get('spread'));
+if(Number.isInteger(requestedSpread)&&requestedSpread>=0&&requestedSpread<=LAST_SPREAD){current=requestedSpread;mobilePage=firstOf(current);render()}
 </script></body></html>
