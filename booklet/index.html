@@ -22,14 +22,14 @@
  #zoomport{height:calc(100% - 46px);text-align:left;touch-action:pan-x pan-y pinch-zoom}
 }
 
-</style><meta name="description" content="Eurcase 产品手册：WOOD、GEEK 旅行箱与 AIR 背包。翻阅产品设计与旅行收纳细节。"></head><body>
+</style></head><body>
 <header><div class="brand">EURCASE <small>PRODUCT BOOK · 产品手册</small></div><div class="tools"><button id="contents">目录</button><button id="magnify">放大阅读</button><button id="full">全屏</button></div></header>
 <main id="stage"><button class="edge" id="prev" aria-label="上一页">‹</button><div class="book" id="book" aria-label="Eurcase 产品手册"><div id="left" class="page left"></div><div id="right" class="page right"></div></div><button class="edge" id="next" aria-label="下一页">›</button></main>
 <footer><div class="position" id="position" aria-live="polite"></div><nav class="dots" aria-label="章节导航" id="dots"></nav><div class="hint" id="hint">点击页面或左右箭头翻页 · 支持键盘 ← → 与滑动</div><button class="start" id="start">翻开手册 →</button></footer>
 <dialog id="toc"><div class="dialog-head"><h2>CONTENTS / 目录</h2><button class="close" data-close="toc">关闭</button></div><div id="grid" class="grid"></div></dialog>
 <dialog id="zoom"><div class="dialog-head"><h2 id="zoomtitle">放大阅读</h2><span class="zoomnote">点击画面放大，滚动查看细节</span><button class="close" data-close="zoom">关闭</button></div><div id="zoomport"><img id="zoomimg" alt="当前手册页面高清预览"></div></dialog>
 <script>
-const assets=["images/wanning-partner-edition-0-20261009.webp","images/wanning-partner-edition-1-20261009.webp","images/wanning-partner-edition-2-20261009.webp","images/wanning-partner-edition-3-20261009.webp","images/wanning-partner-edition-4-20261009.webp","images/wanning-partner-edition-5-20261009.webp","images/wanning-partner-edition-6-20261009.webp","images/wanning-partner-edition-7-20261009.webp","images/wanning-partner-edition-8-20261009.webp"];
+const assets=["images/capacity-edition-0-20261014.webp", "images/capacity-edition-1-20261014.webp", "images/capacity-edition-2-20261014.webp", "images/capacity-edition-3-20261014.webp", "images/capacity-edition-4-20261014.webp", "images/capacity-edition-5-20261014.webp", "images/capacity-edition-6-20261014.webp", "images/capacity-edition-7-20261014.webp", "images/capacity-edition-8-20261014.webp"];
 const LAST_SPREAD=assets.length-1, LAST_PAGE=(assets.length-2)*2+1;
 const labels=['封面 · YOUR CASE, YOUR WAY','01 — 02 / 品牌介绍 · 真正好用','03 — 04 / WOOD · 双层双开','05 — 06 / GEEK · 便捷取用','07 — 08 / AIR · 轻装出发','09 — 10 / AIR · 扩容收纳','11 — 12 / TRAVEL CASE · 城市出行','13 — 14 / 合作机会 · 联系我们','封底 · 为每一次出发'];
 const $=id=>document.getElementById(id);let current=0,busy=false;
